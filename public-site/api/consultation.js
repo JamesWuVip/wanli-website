@@ -15,10 +15,15 @@ export default async function handler(req, res) {
   }
 
   try {
+    console.log('=== API调用开始 ===');
+    console.log('Request method:', req.method);
+    console.log('Request body:', JSON.stringify(req.body));
+
     const { name, phone, projectType, message, locale } = req.body;
 
     // Validation
     if (!name || !phone || !projectType) {
+      console.error('验证失败: 缺少必填字段');
       return res.status(400).json({ error: '缺少必填字段' });
     }
 
@@ -38,11 +43,15 @@ export default async function handler(req, res) {
 
     // WeChat Webhook URL
     const webhookUrl = process.env.WECHAT_WEBHOOK_URL;
+    console.log('环境变量检查:');
+    console.log('- WECHAT_WEBHOOK_URL存在:', !!webhookUrl);
+    console.log('- WECHAT_WEBHOOK_URL长度:', webhookUrl ? webhookUrl.length : 0);
+    console.log('- WECHAT_WEBHOOK_URL前50字符:', webhookUrl ? webhookUrl.substring(0, 50) : 'undefined');
 
     if (!webhookUrl) {
-      console.error('未配置企业微信Webhook URL');
+      console.error('❌ 未配置企业微信Webhook URL');
       // Still return success to avoid breaking user experience
-      return res.json({ success: true, message: '表单已接收' });
+      return res.json({ success: true, message: '表单已接收（未配置webhook）' });
     }
 
     const wechatMessage = {
@@ -62,7 +71,13 @@ export default async function handler(req, res) {
       },
     };
 
+    console.log('准备发送企业微信消息...');
+    console.log('消息内容:', JSON.stringify(wechatMessage, null, 2));
+
     // Send to WeChat
+    console.log('⏳ 开始调用企业微信webhook...');
+    const fetchStartTime = Date.now();
+
     const response = await fetch(webhookUrl, {
       method: 'POST',
       headers: {
@@ -71,19 +86,27 @@ export default async function handler(req, res) {
       body: JSON.stringify(wechatMessage),
     });
 
+    const fetchDuration = Date.now() - fetchStartTime;
+    console.log(`✓ Fetch完成 (耗时: ${fetchDuration}ms)`);
+    console.log('Response status:', response.status);
+    console.log('Response ok:', response.ok);
+
     const result = await response.json();
-    console.log('WeChat response:', result);
+    console.log('✓ 企业微信响应:', JSON.stringify(result));
 
     if (result.errcode !== 0) {
-      console.error('发送失败:', result);
-      // Still return success
-      return res.json({ success: true, message: '表单已接收' });
+      console.error('❌ 企业微信返回错误:', result);
+      return res.json({ success: true, message: '表单已接收（发送失败）', debug: result });
     }
 
-    return res.json({ success: true, message: '提交成功' });
+    console.log('✅ 消息发送成功!');
+    return res.json({ success: true, message: '提交成功', wechatResult: result });
   } catch (error) {
-    console.error('Error:', error.message);
+    console.error('❌ 异常捕获:');
+    console.error('- 错误消息:', error.message);
+    console.error('- 错误堆栈:', error.stack);
+    console.error('- 错误类型:', error.name);
     // Return success even on error to avoid breaking UX
-    return res.json({ success: true, message: '表单已接收' });
+    return res.json({ success: true, message: '表单已接收（异常）', error: error.message });
   }
 }
