@@ -4,12 +4,52 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-    <!-- 首页 - 单页面应用只需要一个URL -->
+    <!-- 主页 -->
     <url>
         <loc>https://zhili.wanli.ai/</loc>
-        <lastmod>2025-12-26</lastmod>
-        <changefreq>weekly</changefreq>
+        <lastmod>2025-12-28</lastmod>
+        <changefreq>daily</changefreq>
         <priority>1.0</priority>
+    </url>
+
+    <!-- 服务页面锚点 -->
+    <url>
+        <loc>https://zhili.wanli.ai/#services</loc>
+        <lastmod>2025-12-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- 案例展示锚点 -->
+    <url>
+        <loc>https://zhili.wanli.ai/#cases</loc>
+        <lastmod>2025-12-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- 关于我们锚点 -->
+    <url>
+        <loc>https://zhili.wanli.ai/#about</loc>
+        <lastmod>2025-12-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- FAQ常见问题锚点 -->
+    <url>
+        <loc>https://zhili.wanli.ai/#faq</loc>
+        <lastmod>2025-12-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- 联系我们锚点 -->
+    <url>
+        <loc>https://zhili.wanli.ai/#contact</loc>
+        <lastmod>2025-12-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
     </url>
 
 </urlset>
