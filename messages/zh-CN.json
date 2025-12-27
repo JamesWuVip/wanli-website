@@ -1,0 +1,242 @@
+{
+  "nav": {
+    "home": "首页",
+    "services": "服务",
+    "cases": "案例",
+    "about": "关于我们",
+    "contact": "联系我们"
+  },
+  "hero": {
+    "title": "智理科技",
+    "subtitle": "大厂技术专家团队 · 专注企业级技术解决方案",
+    "description": "汇聚北京顶尖互联网公司技术与产品专家，为您提供AI应用开发、企业管理系统、互联网应用等高质量技术外包服务",
+    "cta": "免费咨询方案",
+    "learnMore": "了解更多",
+    "callNow": "立即致电",
+    "badges": {
+      "experts": "大厂专家",
+      "ai": "AI技术领先",
+      "fast": "快速交付"
+    },
+    "stats": {
+      "projects": "成功项目",
+      "satisfaction": "客户满意度",
+      "clients": "合作企业"
+    },
+    "urgency": "本月咨询享首单优惠，名额有限"
+  },
+  "advantages": {
+    "title": "我们的优势",
+    "subtitle": "为什么选择智理科技",
+    "expertTeam": {
+      "title": "顶尖专家团队",
+      "description": "团队成员均来自北京一线互联网公司，拥有丰富的大型项目经验和技术积累"
+    },
+    "aiExpertise": {
+      "title": "AI技术专长",
+      "description": "深耕AI应用开发，擅长将最新AI技术融入企业业务场景，提升效率与竞争力"
+    },
+    "highQuality": {
+      "title": "高质高效",
+      "description": "严格的代码规范和项目管理流程，确保按时交付高质量的技术解决方案"
+    },
+    "fullStack": {
+      "title": "全栈服务",
+      "description": "从需求分析到产品上线，提供一站式技术服务，覆盖前后端、移动端及云服务"
+    }
+  },
+  "services": {
+    "title": "核心服务",
+    "subtitle": "专业的技术外包服务",
+    "aiDevelopment": {
+      "title": "AI应用开发",
+      "description": "智能客服、数据分析、自动化工具等AI应用定制开发"
+    },
+    "enterpriseApp": {
+      "title": "企业管理系统",
+      "description": "ERP、CRM、OA等企业级管理系统开发与定制"
+    },
+    "webDevelopment": {
+      "title": "网站开发",
+      "description": "企业官网、电商平台、营销网站等高性能Web应用"
+    },
+    "mobileApp": {
+      "title": "移动应用",
+      "description": "iOS、Android原生应用及跨平台移动应用开发"
+    },
+    "consulting": {
+      "title": "技术咨询",
+      "description": "架构设计、技术选型、性能优化等专业技术咨询服务"
+    },
+    "cloudService": {
+      "title": "云服务部署",
+      "description": "云架构设计、DevOps、自动化运维等云服务解决方案"
+    }
+  },
+  "process": {
+    "title": "合作流程",
+    "subtitle": "简单高效的合作模式",
+    "step1": {
+      "title": "需求沟通",
+      "description": "深入了解您的业务需求和技术要求"
+    },
+    "step2": {
+      "title": "方案设计",
+      "description": "制定详细的技术方案和项目计划"
+    },
+    "step3": {
+      "title": "敏捷开发",
+      "description": "采用敏捷开发模式，定期交付可用版本"
+    },
+    "step4": {
+      "title": "测试上线",
+      "description": "严格测试，确保产品质量后平稳上线"
+    },
+    "step5": {
+      "title": "运维支持",
+      "description": "提供持续的技术支持和系统维护服务"
+    }
+  },
+  "cta": {
+    "title": "准备开始您的项目了吗？",
+    "subtitle": "联系我们，获取专业的技术解决方案",
+    "button": "免费咨询"
+  },
+  "footer": {
+    "company": "北京智理科技有限公司",
+    "about": "关于我们",
+    "aboutText": "汇聚大厂技术专家，专注为企业提供高质量技术外包服务",
+    "quickLinks": "快速链接",
+    "contact": "联系方式",
+    "email": "邮箱",
+    "phone": "电话",
+    "address": "地址",
+    "addressText": "北京市海淀区",
+    "rights": "版权所有"
+  },
+  "trust": {
+    "title": "值得信赖的技术伙伴",
+    "subtitle": "用数据说话，用实力证明",
+    "stats": {
+      "projects": "成功项目",
+      "clients": "服务客户",
+      "satisfaction": "满意度",
+      "experience": "年经验"
+    },
+    "cases": {
+      "case1": {
+        "icon": "🤖",
+        "title": "AI智能客服系统",
+        "description": "为大型电商平台开发智能客服系统，实现全天候自动应答，显著提升客服效率和客户满意度",
+        "industry": "电商行业",
+        "result": "客服效率大幅提升"
+      },
+      "case2": {
+        "icon": "📊",
+        "title": "企业数据分析平台",
+        "description": "为金融公司打造数据分析BI平台，实时监控业务指标，智能预警风险，助力管理层科学决策",
+        "industry": "金融行业",
+        "result": "决策效率显著提升"
+      },
+      "case3": {
+        "icon": "🏪",
+        "title": "新零售管理系统",
+        "description": "开发全渠道零售管理系统，打通线上线下，实现库存、订单、会员一体化管理，优化运营成本",
+        "industry": "零售行业",
+        "result": "运营成本明显降低"
+      }
+    }
+  },
+  "consultForm": {
+    "title": "免费获取技术方案",
+    "subtitle": "留下联系方式，资深技术顾问将在2小时内回电",
+    "freeOffer": "限时福利：首次咨询免费送技术方案",
+    "quickFill": "快速填写",
+    "quickFillTip": "只需30秒，填写姓名和电话即可提交",
+    "name": "您的姓名",
+    "namePlaceholder": "请输入您的姓名",
+    "phone": "手机号码",
+    "phonePlaceholder": "请输入11位手机号",
+    "projectType": "项目类型",
+    "selectProject": "请选择您的项目类型",
+    "projectTypes": {
+      "ai": "AI应用开发",
+      "enterprise": "企业管理系统",
+      "web": "网站开发",
+      "mobile": "移动应用",
+      "consulting": "技术咨询",
+      "other": "其他"
+    },
+    "message": "需求描述",
+    "optional": "选填",
+    "messagePlaceholder": "简单描述您的项目需求，我们会提供更精准的方案...",
+    "submit": "提交咨询",
+    "submitting": "提交中...",
+    "submitted": "提交成功！我们会尽快联系您",
+    "privacy": "您的信息将被严格保密",
+    "responseTime": "2小时内快速响应",
+    "orContactDirect": "或直接联系我们",
+    "callNow": "电话咨询",
+    "emailUs": "邮件咨询",
+    "wechat": "微信咨询",
+    "scanQR": "扫码添加",
+    "errors": {
+      "nameRequired": "请填写您的姓名",
+      "phoneRequired": "请填写手机号码",
+      "phoneInvalid": "请输入正确的11位手机号",
+      "projectTypeRequired": "请选择项目类型"
+    },
+    "toast": {
+      "success": "🎉 提交成功！我们会在2小时内与您联系",
+      "error": "😔 提交失败，请直接拨打电话：138-1179-6300",
+      "validationError": "请正确填写表单信息"
+    }
+  },
+  "testimonials": {
+    "title": "客户真实评价",
+    "subtitle": "他们选择了我们，也获得了成功",
+    "testimonial1": {
+      "content": "智理科技团队非常专业，从需求分析到系统上线全程跟进，开发的AI客服系统大大提升了我们的服务效率。强烈推荐！",
+      "name": "张总",
+      "position": "CEO",
+      "company": "某电商平台"
+    },
+    "testimonial2": {
+      "content": "合作非常愉快！技术实力过硬，沟通顺畅，项目按时高质量交付。他们对AI技术的理解很深，给了很多有价值的建议。",
+      "name": "李经理",
+      "position": "技术总监",
+      "company": "某金融科技公司"
+    },
+    "testimonial3": {
+      "content": "作为初创公司，我们对技术外包很谨慎。智理科技用实力证明了他们值得信赖，不仅完成了开发，还帮我们优化了架构。",
+      "name": "王先生",
+      "position": "创始人",
+      "company": "某SaaS创业公司"
+    }
+  },
+  "aiCapabilities": {
+    "badge": "AI核心能力",
+    "title": "AI赋能企业数字化转型",
+    "subtitle": "将前沿AI技术融入您的业务场景，提升竞争力",
+    "capabilities": {
+      "chat": {
+        "title": "智能对话系统",
+        "description": "打造7×24小时在线的智能客服，自动解答客户问题，提升服务体验和团队效率"
+      },
+      "document": {
+        "title": "文档智能处理",
+        "description": "自动提取合同、发票、证件信息，智能生成报告和内容，解放人工重复劳动"
+      },
+      "workflow": {
+        "title": "业务流程自动化",
+        "description": "将重复性工作交给AI，自动处理审批、数据录入、报表生成等日常任务"
+      },
+      "insight": {
+        "title": "智能数据分析",
+        "description": "从海量数据中发现商业洞察，智能预测趋势，辅助管理层快速决策"
+      }
+    },
+    "techStack": "我们使用的AI技术栈",
+    "cta": "咨询AI解决方案"
+  }
+}

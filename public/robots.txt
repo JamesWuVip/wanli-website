@@ -1,0 +1,17 @@
+# *
+User-agent: *
+Allow: /
+
+# Baiduspider
+User-agent: Baiduspider
+Allow: /
+
+# Googlebot
+User-agent: Googlebot
+Allow: /
+
+# Host
+Host: https://zhilitech.com
+
+# Sitemaps
+Sitemap: https://zhilitech.com/sitemap.xml
