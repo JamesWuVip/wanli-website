@@ -1,4 +1,6 @@
 // Vercel Serverless Function for handling consultation form submissions
+import nodemailer from 'nodemailer';
+
 export default async function handler(req, res) {
   // Set CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -99,8 +101,73 @@ export default async function handler(req, res) {
       return res.json({ success: true, message: '表单已接收（发送失败）', debug: result });
     }
 
-    console.log('✅ 消息发送成功!');
-    return res.json({ success: true, message: '提交成功', wechatResult: result });
+    console.log('✅ 企业微信消息发送成功!');
+
+    // Send email notification via EmailJS
+    let emailResult = null;
+    try {
+      console.log('⏳ 开始发送EmailJS邮件通知...');
+
+      const emailJsServiceId = process.env.EMAILJS_SERVICE_ID;
+      const emailJsTemplateId = process.env.EMAILJS_TEMPLATE_ID;
+      const emailJsPublicKey = process.env.EMAILJS_PUBLIC_KEY;
+
+      console.log('EmailJS配置检查:');
+      console.log('- SERVICE_ID存在:', !!emailJsServiceId);
+      console.log('- TEMPLATE_ID存在:', !!emailJsTemplateId);
+      console.log('- PUBLIC_KEY存在:', !!emailJsPublicKey);
+
+      if (!emailJsServiceId || !emailJsTemplateId || !emailJsPublicKey) {
+        console.error('❌ EmailJS配置不完整，跳过邮件发送');
+      } else {
+        const emailData = {
+          service_id: emailJsServiceId,
+          template_id: emailJsTemplateId,
+          user_id: emailJsPublicKey,
+          template_params: {
+            to_email: 'wuning@wanli.ai',
+            from_name: '智理科技官网',
+            customer_name: name,
+            customer_phone: phone,
+            project_type: projectTypeName,
+            customer_message: message || '暂无',
+            submit_time: currentTime
+          }
+        };
+
+        console.log('发送EmailJS请求...');
+        const emailResponse = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(emailData),
+        });
+
+        const emailResponseText = await emailResponse.text();
+        console.log('EmailJS响应状态:', emailResponse.status);
+        console.log('EmailJS响应内容:', emailResponseText);
+
+        if (emailResponse.ok) {
+          emailResult = emailResponseText;
+          console.log('✅ EmailJS邮件发送成功!');
+        } else {
+          console.error('❌ EmailJS发送失败:', emailResponse.status, emailResponseText);
+        }
+      }
+    } catch (emailError) {
+      console.error('❌ EmailJS发送异常:');
+      console.error('- 错误消息:', emailError.message);
+      console.error('- 错误堆栈:', emailError.stack);
+      // 邮件发送失败不影响主流程
+    }
+
+    return res.json({
+      success: true,
+      message: '提交成功',
+      wechatResult: result,
+      emailSent: !!emailResult
+    });
   } catch (error) {
     console.error('❌ 异常捕获:');
     console.error('- 错误消息:', error.message);

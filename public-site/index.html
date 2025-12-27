@@ -103,6 +103,13 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="translations.js"></script>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("U9d-Qb1gURPlKENzl"); // EmailJS Public Key
+        })();
+    </script>
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
@@ -1042,17 +1049,38 @@
             // 4. 表单收集服务（金数据、麦客等）
 
             try {
-                // 发送到我们的 API
-                const response = await fetch('/api/consultation', {
+                // 同时发送到后端API和EmailJS
+                const apiPromise = fetch('/api/consultation', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(data)
-                }).catch(() => {
-                    // 如果发送失败，仍然显示成功（因为已经记录到控制台）
-                    console.log('备用方案：数据已记录到本地');
+                }).catch((error) => {
+                    console.log('API发送失败:', error);
                 });
+
+                // 发送EmailJS邮件
+                const emailPromise = emailjs.send(
+                    'service_vuuwjre', // Service ID
+                    'template_can4qbd', // Template ID
+                    {
+                        to_email: 'wuning@wanli.ai',
+                        from_name: '智理科技官网',
+                        customer_name: data.name,
+                        customer_phone: data.phone,
+                        project_type: data.projectType,
+                        customer_message: data.message,
+                        submit_time: data.submitTime
+                    }
+                ).then((response) => {
+                    console.log('✅ EmailJS发送成功:', response.status, response.text);
+                }).catch((error) => {
+                    console.error('❌ EmailJS发送失败:', error);
+                });
+
+                // 等待两个请求都完成（但不会因为失败而中断）
+                await Promise.allSettled([apiPromise, emailPromise]);
 
                 // 保存到 localStorage 作为备份
                 const leads = JSON.parse(localStorage.getItem('leads') || '[]');
