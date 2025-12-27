@@ -153,7 +153,7 @@ async function technicalSEOAudit(url) {
     }
 
     // 2. H1标签检查
-    const h1Matches = html.match(/<h1[^>]*>(.*?)<\/h1>/gi);
+    const h1Matches = html.match(/<h1[^>]*>[\s\S]*?<\/h1>/gi);
     if (!h1Matches || h1Matches.length === 0) {
       issues.push('❌ 缺少H1标签');
       recommendations.push('添加包含主关键词的H1标题');
@@ -163,7 +163,8 @@ async function technicalSEOAudit(url) {
       recommendations.push('确保每页只有一个H1标签');
       score -= 5;
     } else {
-      console.log(`  ✓ H1标签: ${h1Matches[0].replace(/<[^>]*>/g, '').substring(0, 50)}`);
+      const h1Text = h1Matches[0].replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+      console.log(`  ✓ H1标签: ${h1Text.substring(0, 50)}${h1Text.length > 50 ? '...' : ''}`);
     }
 
     // 3. 图片Alt属性检查
@@ -246,11 +247,15 @@ async function technicalSEOAudit(url) {
     }
 
     // 9. 移动友好性检查 (基于viewport和响应式设计)
-    const hasMobileCSS = html.includes('@media') || html.includes('responsive');
+    const hasMobileCSS = html.includes('@media') ||
+                         html.includes('responsive') ||
+                         html.match(/class="[^"]*(?:sm:|md:|lg:|xl:|2xl:)/); // 检测Tailwind响应式类
     if (!hasMobileCSS) {
       issues.push('⚠️  可能缺少响应式CSS');
       recommendations.push('使用媒体查询实现移动端适配');
       score -= 10;
+    } else {
+      console.log('  ✓ 已实现响应式设计');
     }
 
     // 10. 页面加载速度检查
