@@ -1,13 +1,17 @@
 {
   "name": "zhili-tech-website",
   "version": "1.0.0",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "seo": "node seo-monitor.js",
+    "seo:watch": "node seo-monitor.js --watch",
+    "seo:help": "node seo-monitor.js --help"
   },
   "dependencies": {
     "next": "^14.1.0",
