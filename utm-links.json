@@ -1,0 +1,88 @@
+{
+  "generated_at": "2025-12-28T07:09:53.714Z",
+  "purpose": "用于在掘金等外部平台发布文章时，添加UTM参数追踪流量来源",
+  "links": {
+    "ai-cost-optimization-guide": {
+      "title": "AI应用成本优化完全指南：从每月$5000降至$800的实战经验",
+      "base_url": "https://zhili.wanli.ai/blog/posts/ai-cost-optimization-guide.html",
+      "utm_links": {
+        "juejin": "https://zhili.wanli.ai/blog/posts/ai-cost-optimization-guide.html?utm_source=juejin&utm_medium=article&utm_campaign=tech_blog",
+        "csdn": "https://zhili.wanli.ai/blog/posts/ai-cost-optimization-guide.html?utm_source=csdn&utm_medium=article&utm_campaign=tech_blog",
+        "zhihu": "https://zhili.wanli.ai/blog/posts/ai-cost-optimization-guide.html?utm_source=zhihu&utm_medium=article&utm_campaign=tech_blog",
+        "segmentfault": "https://zhili.wanli.ai/blog/posts/ai-cost-optimization-guide.html?utm_source=segmentfault&utm_medium=article&utm_campaign=tech_blog",
+        "wechat": "https://zhili.wanli.ai/blog/posts/ai-cost-optimization-guide.html?utm_source=wechat&utm_medium=social&utm_campaign=tech_blog"
+      },
+      "markdown_snippets": {
+        "juejin": "[阅读原文](https://zhili.wanli.ai/blog/posts/ai-cost-optimization-guide.html?utm_source=juejin&utm_medium=article&utm_campaign=tech_blog)",
+        "homepage": "[智理科技官网](https://zhili.wanli.ai/?utm_source=juejin&utm_medium=article&utm_campaign=tech_blog)",
+        "blog": "[技术博客](https://zhili.wanli.ai/blog/?utm_source=juejin&utm_medium=article&utm_campaign=tech_blog)"
+      }
+    },
+    "prompt-engineering-complete-guide": {
+      "title": "提示词工程完全指南：从入门到精通",
+      "base_url": "https://zhili.wanli.ai/blog/posts/prompt-engineering-complete-guide.html",
+      "utm_links": {
+        "juejin": "https://zhili.wanli.ai/blog/posts/prompt-engineering-complete-guide.html?utm_source=juejin&utm_medium=article&utm_campaign=tech_blog",
+        "csdn": "https://zhili.wanli.ai/blog/posts/prompt-engineering-complete-guide.html?utm_source=csdn&utm_medium=article&utm_campaign=tech_blog",
+        "zhihu": "https://zhili.wanli.ai/blog/posts/prompt-engineering-complete-guide.html?utm_source=zhihu&utm_medium=article&utm_campaign=tech_blog",
+        "segmentfault": "https://zhili.wanli.ai/blog/posts/prompt-engineering-complete-guide.html?utm_source=segmentfault&utm_medium=article&utm_campaign=tech_blog",
+        "wechat": "https://zhili.wanli.ai/blog/posts/prompt-engineering-complete-guide.html?utm_source=wechat&utm_medium=social&utm_campaign=tech_blog"
+      },
+      "markdown_snippets": {
+        "juejin": "[阅读原文](https://zhili.wanli.ai/blog/posts/prompt-engineering-complete-guide.html?utm_source=juejin&utm_medium=article&utm_campaign=tech_blog)",
+        "homepage": "[智理科技官网](https://zhili.wanli.ai/?utm_source=juejin&utm_medium=article&utm_campaign=tech_blog)",
+        "blog": "[技术博客](https://zhili.wanli.ai/blog/?utm_source=juejin&utm_medium=article&utm_campaign=tech_blog)"
+      }
+    },
+    "enterprise-microservices-architecture": {
+      "title": "企业级微服务架构设计与落地实践",
+      "base_url": "https://zhili.wanli.ai/blog/posts/enterprise-microservices-architecture.html",
+      "utm_links": {
+        "juejin": "https://zhili.wanli.ai/blog/posts/enterprise-microservices-architecture.html?utm_source=juejin&utm_medium=article&utm_campaign=tech_blog",
+        "csdn": "https://zhili.wanli.ai/blog/posts/enterprise-microservices-architecture.html?utm_source=csdn&utm_medium=article&utm_campaign=tech_blog",
+        "zhihu": "https://zhili.wanli.ai/blog/posts/enterprise-microservices-architecture.html?utm_source=zhihu&utm_medium=article&utm_campaign=tech_blog",
+        "segmentfault": "https://zhili.wanli.ai/blog/posts/enterprise-microservices-architecture.html?utm_source=segmentfault&utm_medium=article&utm_campaign=tech_blog",
+        "wechat": "https://zhili.wanli.ai/blog/posts/enterprise-microservices-architecture.html?utm_source=wechat&utm_medium=social&utm_campaign=tech_blog"
+      },
+      "markdown_snippets": {
+        "juejin": "[阅读原文](https://zhili.wanli.ai/blog/posts/enterprise-microservices-architecture.html?utm_source=juejin&utm_medium=article&utm_campaign=tech_blog)",
+        "homepage": "[智理科技官网](https://zhili.wanli.ai/?utm_source=juejin&utm_medium=article&utm_campaign=tech_blog)",
+        "blog": "[技术博客](https://zhili.wanli.ai/blog/?utm_source=juejin&utm_medium=article&utm_campaign=tech_blog)"
+      }
+    },
+    "rag-enterprise-knowledge-base": {
+      "title": "RAG技术在企业知识库中的应用实践",
+      "base_url": "https://zhili.wanli.ai/blog/posts/rag-enterprise-knowledge-base.html",
+      "utm_links": {
+        "juejin": "https://zhili.wanli.ai/blog/posts/rag-enterprise-knowledge-base.html?utm_source=juejin&utm_medium=article&utm_campaign=tech_blog",
+        "csdn": "https://zhili.wanli.ai/blog/posts/rag-enterprise-knowledge-base.html?utm_source=csdn&utm_medium=article&utm_campaign=tech_blog",
+        "zhihu": "https://zhili.wanli.ai/blog/posts/rag-enterprise-knowledge-base.html?utm_source=zhihu&utm_medium=article&utm_campaign=tech_blog",
+        "segmentfault": "https://zhili.wanli.ai/blog/posts/rag-enterprise-knowledge-base.html?utm_source=segmentfault&utm_medium=article&utm_campaign=tech_blog",
+        "wechat": "https://zhili.wanli.ai/blog/posts/rag-enterprise-knowledge-base.html?utm_source=wechat&utm_medium=social&utm_campaign=tech_blog"
+      },
+      "markdown_snippets": {
+        "juejin": "[阅读原文](https://zhili.wanli.ai/blog/posts/rag-enterprise-knowledge-base.html?utm_source=juejin&utm_medium=article&utm_campaign=tech_blog)",
+        "homepage": "[智理科技官网](https://zhili.wanli.ai/?utm_source=juejin&utm_medium=article&utm_campaign=tech_blog)",
+        "blog": "[技术博客](https://zhili.wanli.ai/blog/?utm_source=juejin&utm_medium=article&utm_campaign=tech_blog)"
+      }
+    }
+  },
+  "main_pages": {
+    "homepage": {
+      "juejin": "https://zhili.wanli.ai/?utm_source=juejin&utm_medium=article&utm_campaign=tech_blog",
+      "markdown": "[智理科技官网](https://zhili.wanli.ai/?utm_source=juejin&utm_medium=article&utm_campaign=tech_blog)"
+    },
+    "blog": {
+      "juejin": "https://zhili.wanli.ai/blog/?utm_source=juejin&utm_medium=article&utm_campaign=tech_blog",
+      "markdown": "[技术博客](https://zhili.wanli.ai/blog/?utm_source=juejin&utm_medium=article&utm_campaign=tech_blog)"
+    },
+    "services": {
+      "juejin": "https://zhili.wanli.ai/?utm_source=juejin&utm_medium=article&utm_campaign=tech_blog#services",
+      "markdown": "[服务内容](https://zhili.wanli.ai/?utm_source=juejin&utm_medium=article&utm_campaign=tech_blog#services)"
+    },
+    "contact": {
+      "juejin": "https://zhili.wanli.ai/?utm_source=juejin&utm_medium=article&utm_campaign=tech_blog#contact",
+      "markdown": "[联系我们](https://zhili.wanli.ai/?utm_source=juejin&utm_medium=article&utm_campaign=tech_blog#contact)"
+    }
+  }
+}

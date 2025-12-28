@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>智理科技技术博客</title>
+    <link>https://zhili.wanli.ai/blog/</link>
+    <description>企业级AI应用开发、微服务架构、技术外包服务 - 智理科技</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 28 Dec 2025 07:08:41 GMT</lastBuildDate>
+    <atom:link href="https://zhili.wanli.ai/blog/rss.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://zhili.wanli.ai/og-image.jpg</url>
+      <title>智理科技技术博客</title>
+      <link>https://zhili.wanli.ai/blog/</link>
+    </image>
+
+    <item>
+      <title><![CDATA[AI应用成本优化完全指南：从每月$5000降至$800的实战经验]]></title>
+      <description><![CDATA[分享真实项目中将AI应用成本从每月$5000降至$800的完整优化策略，涵盖模型选型、Prompt优化、缓存策略、本地化部署等多个维度]]></description>
+      <link>https://zhili.wanli.ai/blog/posts/ai-cost-optimization-guide.html</link>
+      <guid isPermaLink="true">https://zhili.wanli.ai/blog/posts/ai-cost-optimization-guide.html</guid>
+      <pubDate>Tue, 31 Dec 2024 00:00:00 GMT</pubDate>
+      <category>AI应用开发</category>
+      <category>成本优化</category>
+      <category>AI应用</category>
+      <category>GPT-4</category>
+      <category>开源模型</category>
+      <category>性能优化</category>
+      <author>wuning@wanli.ai (智理科技技术团队)</author>
+    </item>
+  
+
+    <item>
+      <title><![CDATA[提示词工程完全指南：从入门到精通]]></title>
+      <description><![CDATA[系统讲解提示词工程的核心原理、设计模式和最佳实践，涵盖Zero-Shot、Few-Shot、Chain-of-Thought等技术，附大量真实案例和可复用模板]]></description>
+      <link>https://zhili.wanli.ai/blog/posts/prompt-engineering-complete-guide.html</link>
+      <guid isPermaLink="true">https://zhili.wanli.ai/blog/posts/prompt-engineering-complete-guide.html</guid>
+      <pubDate>Mon, 30 Dec 2024 00:00:00 GMT</pubDate>
+      <category>AI应用开发</category>
+      <category>提示词工程</category>
+      <category>GPT-4</category>
+      <category>Claude</category>
+      <category>Prompt</category>
+      <category>AI应用</category>
+      <author>wuning@wanli.ai (智理科技技术团队)</author>
+    </item>
+  
+
+    <item>
+      <title><![CDATA[企业级微服务架构设计与落地实践]]></title>
+      <description><![CDATA[从单体应用到微服务的完整演进路径，涵盖服务拆分策略、API网关设计、分布式事务处理、服务治理等核心技术，并分享真实项目中的踩坑经验]]></description>
+      <link>https://zhili.wanli.ai/blog/posts/enterprise-microservices-architecture.html</link>
+      <guid isPermaLink="true">https://zhili.wanli.ai/blog/posts/enterprise-microservices-architecture.html</guid>
+      <pubDate>Sun, 29 Dec 2024 00:00:00 GMT</pubDate>
+      <category>架构设计</category>
+      <category>微服务</category>
+      <category>Spring Cloud</category>
+      <category>分布式系统</category>
+      <category>架构设计</category>
+      <category>服务治理</category>
+      <author>wuning@wanli.ai (智理科技技术团队)</author>
+    </item>
+  
+
+    <item>
+      <title><![CDATA[RAG技术在企业知识库中的应用实践]]></title>
+      <description><![CDATA[深入解析RAG（检索增强生成）技术如何解决企业知识库应用痛点，包含完整的技术架构、向量数据库选型、检索策略优化及真实案例分享]]></description>
+      <link>https://zhili.wanli.ai/blog/posts/rag-enterprise-knowledge-base.html</link>
+      <guid isPermaLink="true">https://zhili.wanli.ai/blog/posts/rag-enterprise-knowledge-base.html</guid>
+      <pubDate>Sat, 28 Dec 2024 00:00:00 GMT</pubDate>
+      <category>AI应用开发</category>
+      <category>RAG</category>
+      <category>向量数据库</category>
+      <category>企业知识库</category>
+      <category>LangChain</category>
+      <category>AI应用</category>
+      <author>wuning@wanli.ai (智理科技技术团队)</author>
+    </item>
+  
+  </channel>
+</rss>
