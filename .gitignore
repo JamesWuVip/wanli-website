@@ -40,8 +40,10 @@ test-*.html
 # Base64 encoded files
 *.base64
 
-# Baidu push URLs
+# Search engine push URLs
 urls.txt
+urls-360.txt
+urls-sogou.txt
 
 # Temporary image files
 img/
