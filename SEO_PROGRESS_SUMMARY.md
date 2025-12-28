@@ -137,9 +137,17 @@
   - ✅ 请求编入索引
   - ✅ GA4集成
 
+- ✅ 360搜索（15%市场份额）
+  - ✅ Meta标签验证（a1b724ff5ec1a7026e8a640362f688ea）
+  - ⏳ Sitemap提交（待在360站长平台操作）
+  - ⏳ URL主动推送（待获取Token）
+
+- ✅ 搜狗搜索（5%市场份额）
+  - ✅ Meta标签验证（27ekd2iWMi）
+  - ⏳ Sitemap提交（待在搜狗站长平台操作）
+  - ⏳ URL主动推送（待获取Token）
+
 **待完成**:
-- ⏳ 360搜索（15%市场份额）
-- ⏳ 搜狗搜索（5%市场份额）
 - ⏳ Bing（2%市场份额）
 
 ### 7. 内容分发 - 50%完成
@@ -166,38 +174,41 @@
 
 ### 高优先级（本周完成）
 
-#### 1. 完成360搜索提交 ⭐⭐⭐⭐⭐
+#### 1. 完成360搜索提交 ⭐⭐⭐⭐⭐ - 50%完成 ✅
 **预期收益**: 15%市场份额，每月潜在新增流量50-100 UV
 
-**执行步骤**:
-1. ☐ 注册360站长平台：https://zhanzhang.so.com
-2. ☐ 验证网站所有权（HTML文件或Meta标签）
-3. ☐ 提交sitemap.xml
-4. ☐ 获取推送Token
-5. ☐ 编辑360-push.sh替换Token
-6. ☐ 运行 `bash 360-push.sh` 推送URL
-7. ☐ 在index.html添加360验证Meta标签（永久保留）
+**已完成步骤**:
+1. ✅ 注册360站长平台：https://zhanzhang.so.com
+2. ✅ 已添加Meta验证标签并部署
 
-**完成时间**: 2024-12-29（明天）
+**待完成步骤**:
+3. ☐ 在360站长平台点击"验证"按钮完成验证
+4. ☐ 提交sitemap.xml: https://zhili.wanli.ai/sitemap.xml
+5. ☐ 获取推送Token
+6. ☐ 编辑360-push.sh替换Token
+7. ☐ 运行 `bash 360-push.sh` 推送URL
+
+**完成时间**: 今天内
 
 **参考文档**: [SEARCH_ENGINE_SUBMISSION_GUIDE.md](SEARCH_ENGINE_SUBMISSION_GUIDE.md) 第一章
 
 ---
 
-#### 2. 完成搜狗搜索提交 ⭐⭐⭐⭐
+#### 2. 完成搜狗搜索提交 ⭐⭐⭐⭐ - 50%完成 ✅
 **预期收益**: 5%市场份额，每月潜在新增流量20-50 UV
 
-**执行步骤**:
-1. ☐ 注册搜狗站长平台：https://zhanzhang.sogou.com
-2. ☐ 验证网站所有权
-3. ☐ 提交sitemap.xml
-4. ☐ 获取推送Token
-5. ☐ 编辑sogou-push.sh替换Token
-6. ☐ 运行 `bash sogou-push.sh` 推送URL
-7. ☐ 在index.html添加搜狗验证Meta标签（永久保留）
-8. ☐ 添加keywords Meta标签（搜狗重视）
+**已完成步骤**:
+1. ✅ 注册搜狗站长平台：https://zhanzhang.sogou.com
+2. ✅ 已添加Meta验证标签并部署
 
-**完成时间**: 2024-12-30（后天）
+**待完成步骤**:
+3. ☐ 在搜狗站长平台点击"验证"按钮完成验证
+4. ☐ 提交sitemap.xml: https://zhili.wanli.ai/sitemap.xml
+5. ☐ 获取推送Token
+6. ☐ 编辑sogou-push.sh替换Token
+7. ☐ 运行 `bash sogou-push.sh` 推送URL
+
+**完成时间**: 今天内
 
 **参考文档**: [SEARCH_ENGINE_SUBMISSION_GUIDE.md](SEARCH_ENGINE_SUBMISSION_GUIDE.md) 第二章
 
