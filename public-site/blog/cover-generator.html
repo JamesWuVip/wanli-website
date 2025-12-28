@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客封面图生成器</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #1a1a1a;
+            color: white;
+        }
+        #canvas {
+            border: 2px solid #333;
+            border-radius: 8px;
+            margin: 20px auto;
+            display: block;
+            background: white;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #1d4ed8;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 6px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">智理科技博客封面图生成器</h1>
+
+    <div class="controls">
+        <select id="articleSelect">
+            <option value="rag">RAG技术在企业知识库中的应用实践</option>
+            <option value="microservices">企业级微服务架构设计与落地实践</option>
+            <option value="prompt">提示词工程完全指南</option>
+            <option value="cost">AI应用成本优化完全指南</option>
+            <option value="gpt4">如何使用GPT-4构建智能客服系统</option>
+        </select>
+        <button onclick="generateCover()">生成封面</button>
+        <button onclick="downloadImage()">下载图片</button>
+    </div>
+
+    <canvas id="canvas" width="800" height="450"></canvas>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        const articles = {
+            rag: {
+                title: 'RAG技术在企业知识库\n中的应用实践',
+                subtitle: '检索增强生成 · 向量数据库 · 实战案例',
+                gradient: ['#667eea', '#764ba2'],
+                icon: '🔍'
+            },
+            microservices: {
+                title: '企业级微服务架构\n设计与落地实践',
+                subtitle: 'Spring Cloud · 分布式系统 · 服务治理',
+                gradient: ['#f093fb', '#f5576c'],
+                icon: '⚙️'
+            },
+            prompt: {
+                title: '提示词工程完全指南\n从入门到精通',
+                subtitle: 'Zero-Shot · Few-Shot · Chain-of-Thought',
+                gradient: ['#4facfe', '#00f2fe'],
+                icon: '✨'
+            },
+            cost: {
+                title: 'AI应用成本优化\n完全指南',
+                subtitle: '从$5000/月降至$800/月的实战经验',
+                gradient: ['#43e97b', '#38f9d7'],
+                icon: '💰'
+            },
+            gpt4: {
+                title: '使用GPT-4构建\n智能客服系统',
+                subtitle: '提示词工程 · RAG · 成本优化',
+                gradient: ['#fa709a', '#fee140'],
+                icon: '🤖'
+            }
+        };
+
+        function generateCover() {
+            const selected = document.getElementById('articleSelect').value;
+            const article = articles[selected];
+
+            // 清空画布
+            ctx.clearRect(0, 0, 800, 450);
+
+            // 背景渐变
+            const gradient = ctx.createLinearGradient(0, 0, 800, 450);
+            gradient.addColorStop(0, article.gradient[0]);
+            gradient.addColorStop(1, article.gradient[1]);
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 800, 450);
+
+            // 添加网格纹理
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
+            ctx.lineWidth = 1;
+            for (let i = 0; i < 800; i += 40) {
+                ctx.beginPath();
+                ctx.moveTo(i, 0);
+                ctx.lineTo(i, 450);
+                ctx.stroke();
+            }
+            for (let i = 0; i < 450; i += 40) {
+                ctx.beginPath();
+                ctx.moveTo(0, i);
+                ctx.lineTo(800, i);
+                ctx.stroke();
+            }
+
+            // 装饰圆圈
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+            ctx.beginPath();
+            ctx.arc(700, 100, 150, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+            ctx.beginPath();
+            ctx.arc(100, 350, 180, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Logo图标
+            ctx.font = '80px Arial';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+            ctx.fillText(article.icon, 60, 100);
+
+            // 主标题
+            ctx.font = 'bold 52px -apple-system, "Microsoft YaHei", sans-serif';
+            ctx.fillStyle = '#ffffff';
+            const titleLines = article.title.split('\n');
+            titleLines.forEach((line, index) => {
+                ctx.fillText(line, 60, 200 + index * 60);
+            });
+
+            // 副标题
+            ctx.font = '24px -apple-system, "Microsoft YaHei", sans-serif';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+            ctx.fillText(article.subtitle, 60, 340);
+
+            // 底部品牌
+            ctx.font = 'bold 20px Arial';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
+            ctx.fillText('智理科技 · 技术博客', 60, 400);
+
+            ctx.font = '18px Arial';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+            ctx.fillText('zhili.wanli.ai/blog', 60, 425);
+        }
+
+        function downloadImage() {
+            const selected = document.getElementById('articleSelect').value;
+            const link = document.createElement('a');
+            link.download = `cover-${selected}.jpg`;
+            link.href = canvas.toDataURL('image/jpeg', 0.95);
+            link.click();
+        }
+
+        // 页面加载时自动生成第一张
+        window.onload = () => generateCover();
+
+        // 切换文章时自动更新
+        document.getElementById('articleSelect').addEventListener('change', generateCover);
+    </script>
+</body>
+</html>

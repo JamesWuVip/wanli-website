@@ -17,9 +17,6 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- 性能优化 -->
-    <link rel="preconnect" href="https://cdn.tailwindcss.com">
-
     <!-- 百度统计 -->
     <script>
     var _hmt = _hmt || [];
@@ -41,125 +38,253 @@
     </script>
 
     <style>
-        .glass {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Microsoft YaHei";
         }
 
         .post-card {
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: white;
+            border: 1px solid #e5e7eb;
         }
 
         .post-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(102, 126, 234, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: #2563eb;
         }
 
-        .tag {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
-            color: #a78bfa;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.875rem;
-            display: inline-block;
+        .post-cover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .post-cover::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            top: -50%;
+            left: -50%;
         }
 
         .category-badge {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.875rem;
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .category-ai { background: #dbeafe; color: #1e40af; }
+        .category-architecture { background: #fce7f3; color: #9f1239; }
+        .category-system { background: #dcfce7; color: #166534; }
+        .category-case { background: #fef3c7; color: #92400e; }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            background: #f3f4f6;
+            color: #6b7280;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+
+        .nav-link {
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2563eb;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .filter-btn {
+            transition: all 0.2s;
+        }
+
+        .filter-btn.active {
+            background: #2563eb;
+            color: white;
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 text-white min-h-screen">
+<body class="bg-gray-50 text-gray-900">
 
     <!-- 导航栏 -->
-    <nav class="fixed top-0 w-full z-50 glass">
-        <div class="max-w-6xl mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <a href="/" class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="/" class="text-xl font-bold text-gray-900 hover:text-blue-600 transition">
                     智理科技
                 </a>
-                <div class="flex gap-6">
-                    <a href="/" class="hover:text-purple-400 transition">首页</a>
-                    <a href="/blog/" class="text-purple-400">博客</a>
-                    <a href="/#contact" class="hover:text-purple-400 transition">联系我们</a>
+                <div class="flex gap-8">
+                    <a href="/" class="nav-link text-gray-600 hover:text-gray-900 transition">首页</a>
+                    <a href="/blog/" class="nav-link text-blue-600 font-medium">博客</a>
+                    <a href="/#contact" class="nav-link text-gray-600 hover:text-gray-900 transition">联系我们</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- 主内容区域 -->
-    <main class="pt-24 pb-16">
-        <div class="max-w-6xl mx-auto px-4">
+    <!-- 页面头部 -->
+    <header class="bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-3">技术博客</h1>
+            <p class="text-lg text-gray-600">
+                分享AI应用开发、企业系统架构、技术外包最佳实践
+            </p>
+        </div>
+    </header>
 
-            <!-- 页面标题 -->
-            <div class="text-center mb-12">
-                <h1 class="text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                    技术博客
-                </h1>
-                <p class="text-gray-300 text-lg">
-                    分享AI应用开发、企业系统架构、技术外包最佳实践
-                </p>
-            </div>
-
-            <!-- 分类导航 -->
-            <div class="flex flex-wrap gap-3 justify-center mb-12" id="categoryFilter">
-                <button onclick="filterPosts('all')" class="category-badge active" data-category="all">
-                    全部
+    <!-- 分类导航 -->
+    <div class="bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex flex-wrap gap-3" id="categoryFilter">
+                <button onclick="filterPosts('all')" class="filter-btn active px-4 py-2 rounded-md bg-blue-600 text-white font-medium text-sm" data-category="all">
+                    全部文章
                 </button>
-                <button onclick="filterPosts('ai')" class="category-badge opacity-70 hover:opacity-100" data-category="ai">
+                <button onclick="filterPosts('ai')" class="filter-btn px-4 py-2 rounded-md bg-gray-100 text-gray-700 hover:bg-gray-200 font-medium text-sm" data-category="ai">
                     AI应用开发
                 </button>
-                <button onclick="filterPosts('system')" class="category-badge opacity-70 hover:opacity-100" data-category="system">
-                    企业管理系统
-                </button>
-                <button onclick="filterPosts('architecture')" class="category-badge opacity-70 hover:opacity-100" data-category="architecture">
+                <button onclick="filterPosts('architecture')" class="filter-btn px-4 py-2 rounded-md bg-gray-100 text-gray-700 hover:bg-gray-200 font-medium text-sm" data-category="architecture">
                     架构设计
                 </button>
-                <button onclick="filterPosts('case')" class="category-badge opacity-70 hover:opacity-100" data-category="case">
+                <button onclick="filterPosts('system')" class="filter-btn px-4 py-2 rounded-md bg-gray-100 text-gray-700 hover:bg-gray-200 font-medium text-sm" data-category="system">
+                    企业管理系统
+                </button>
+                <button onclick="filterPosts('case')" class="filter-btn px-4 py-2 rounded-md bg-gray-100 text-gray-700 hover:bg-gray-200 font-medium text-sm" data-category="case">
                     案例分析
                 </button>
             </div>
-
-            <!-- 博客文章列表 -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="postList">
-                <!-- 文章将通过JavaScript动态加载 -->
-            </div>
-
-            <!-- 加载状态 -->
-            <div id="loading" class="text-center py-12">
-                <div class="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple-500"></div>
-                <p class="mt-4 text-gray-400">加载文章中...</p>
-            </div>
-
-            <!-- 空状态 -->
-            <div id="emptyState" class="text-center py-12 hidden">
-                <p class="text-gray-400 text-lg">该分类下暂无文章</p>
-            </div>
-
         </div>
+    </div>
+
+    <!-- 主内容区域 -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- 博客文章列表 -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="postList">
+            <!-- 文章将通过JavaScript动态加载 -->
+        </div>
+
+        <!-- 加载状态 -->
+        <div id="loading" class="text-center py-16">
+            <div class="inline-block animate-spin rounded-full h-12 w-12 border-4 border-gray-300 border-t-blue-600"></div>
+            <p class="mt-4 text-gray-500">加载文章中...</p>
+        </div>
+
+        <!-- 空状态 -->
+        <div id="emptyState" class="text-center py-16 hidden">
+            <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <p class="mt-4 text-lg text-gray-500">该分类下暂无文章</p>
+        </div>
+
     </main>
 
     <!-- 页脚 -->
-    <footer class="glass py-8 mt-16">
-        <div class="max-w-6xl mx-auto px-4 text-center text-gray-400">
-            <p>&copy; 2024 北京智理科技有限公司 |
-                <a href="/" class="hover:text-purple-400">返回首页</a> |
-                <a href="mailto:wuning@wanli.ai" class="hover:text-purple-400">联系我们</a>
-            </p>
+    <footer class="bg-white border-t border-gray-200 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center text-gray-500 text-sm">
+                <p>&copy; 2024 北京智理科技有限公司 |
+                    <a href="/" class="hover:text-blue-600">返回首页</a> |
+                    <a href="mailto:wuning@wanli.ai" class="hover:text-blue-600">联系我们</a>
+                </p>
+            </div>
         </div>
     </footer>
 
     <script>
-        // 博客文章数据（后续可以从JSON文件或API加载）
+        // 博客文章数据
+        const coverGradients = {
+            'ai': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            'architecture': 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+            'system': 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+            'case': 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)'
+        };
+
+        const categoryIcons = {
+            'ai': '🤖',
+            'architecture': '⚙️',
+            'system': '💼',
+            'case': '📊'
+        };
+
         const blogPosts = [
             {
                 id: 1,
+                title: "RAG技术在企业知识库中的应用实践",
+                slug: "rag-enterprise-knowledge-base",
+                excerpt: "深入解析RAG（检索增强生成）技术如何解决企业知识库应用痛点，包含完整的技术架构、向量数据库选型、检索策略优化及真实案例分享",
+                category: "ai",
+                categoryName: "AI应用开发",
+                tags: ["RAG", "向量数据库", "企业知识库"],
+                author: "智理科技技术团队",
+                date: "2024-12-28",
+                readTime: "12分钟"
+            },
+            {
+                id: 2,
+                title: "企业级微服务架构设计与落地实践",
+                slug: "enterprise-microservices-architecture",
+                excerpt: "从单体应用到微服务的完整演进路径，涵盖服务拆分策略、API网关设计、分布式事务处理、服务治理等核心技术，并分享真实项目中的踩坑经验",
+                category: "architecture",
+                categoryName: "架构设计",
+                tags: ["微服务", "Spring Cloud", "分布式系统"],
+                author: "智理科技技术团队",
+                date: "2024-12-29",
+                readTime: "15分钟"
+            },
+            {
+                id: 3,
+                title: "提示词工程完全指南：从入门到精通",
+                slug: "prompt-engineering-complete-guide",
+                excerpt: "系统讲解提示词工程的核心原理、设计模式和最佳实践，涵盖Zero-Shot、Few-Shot、Chain-of-Thought等技术，附大量真实案例和可复用模板",
+                category: "ai",
+                categoryName: "AI应用开发",
+                tags: ["提示词工程", "GPT-4", "Prompt"],
+                author: "智理科技技术团队",
+                date: "2024-12-30",
+                readTime: "18分钟"
+            },
+            {
+                id: 4,
+                title: "AI应用成本优化完全指南",
+                slug: "ai-cost-optimization-guide",
+                excerpt: "分享真实项目中将AI应用成本从每月$5000降至$800的完整优化策略，涵盖模型选型、Prompt优化、缓存策略、本地化部署等多个维度",
+                category: "ai",
+                categoryName: "AI应用开发",
+                tags: ["成本优化", "AI应用", "GPT-4"],
+                author: "智理科技技术团队",
+                date: "2024-12-31",
+                readTime: "20分钟"
+            },
+            {
+                id: 5,
                 title: "如何使用GPT-4构建智能客服系统",
                 slug: "build-ai-customer-service-with-gpt4",
                 excerpt: "深入探讨如何利用GPT-4 API构建一个高效的智能客服系统，包括提示词工程、上下文管理、多轮对话等核心技术要点。",
@@ -168,34 +293,7 @@
                 tags: ["GPT-4", "客服系统", "提示词工程"],
                 author: "智理科技技术团队",
                 date: "2024-12-20",
-                readTime: "8分钟",
-                cover: "https://via.placeholder.com/400x250/667eea/ffffff?text=AI+Customer+Service"
-            },
-            {
-                id: 2,
-                title: "企业管理系统微服务架构实战",
-                slug: "enterprise-microservices-architecture",
-                excerpt: "从单体应用到微服务架构的演进之路，分享我们在企业管理系统开发中的微服务拆分策略、服务治理和性能优化经验。",
-                category: "architecture",
-                categoryName: "架构设计",
-                tags: ["微服务", "架构设计", "性能优化"],
-                author: "智理科技技术团队",
-                date: "2024-12-18",
-                readTime: "12分钟",
-                cover: "https://via.placeholder.com/400x250/764ba2/ffffff?text=Microservices"
-            },
-            {
-                id: 3,
-                title: "教育行业AI应用落地案例分析",
-                slug: "ai-in-education-case-study",
-                excerpt: "以我们为某知名教育机构开发的AI辅导系统为例，分析教育行业AI应用的需求分析、技术选型、落地实施全流程。",
-                category: "case",
-                categoryName: "案例分析",
-                tags: ["教育AI", "案例分析", "项目管理"],
-                author: "智理科技技术团队",
-                date: "2024-12-15",
-                readTime: "10分钟",
-                cover: "https://via.placeholder.com/400x250/F093FB/ffffff?text=AI+Education"
+                readTime: "8分钟"
             }
         ];
 
@@ -225,27 +323,39 @@
 
             // 渲染文章卡片
             postList.innerHTML = filteredPosts.map(post => `
-                <article class="post-card glass rounded-xl overflow-hidden">
-                    <img src="${post.cover}" alt="${post.title}" class="w-full h-48 object-cover">
+                <article class="post-card rounded-lg overflow-hidden">
+                    <div class="post-cover" style="background: ${coverGradients[post.category]}">
+                        <span style="font-size: 4rem; filter: brightness(0) invert(1);">${categoryIcons[post.category]}</span>
+                    </div>
                     <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="category-badge text-xs">${post.categoryName}</span>
-                            <span class="text-gray-400 text-sm">${post.date}</span>
-                            <span class="text-gray-400 text-sm">· ${post.readTime}</span>
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="category-badge category-${post.category}">${post.categoryName}</span>
+                            <span class="text-sm text-gray-500">${post.date}</span>
                         </div>
-                        <h2 class="text-xl font-bold mb-3 hover:text-purple-400 transition">
+                        <h2 class="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition">
                             <a href="/blog/posts/${post.slug}.html">${post.title}</a>
                         </h2>
-                        <p class="text-gray-300 mb-4 line-clamp-3">
+                        <p class="text-gray-600 mb-4 line-clamp-3 text-sm leading-relaxed">
                             ${post.excerpt}
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            ${post.tags.map(tag => `<span class="tag">#${tag}</span>`).join('')}
+                            ${post.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
                         </div>
-                        <a href="/blog/posts/${post.slug}.html"
-                           class="inline-block text-purple-400 hover:text-purple-300 font-semibold">
-                            阅读全文 →
-                        </a>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <span class="text-sm text-gray-500">
+                                <svg class="inline w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                ${post.readTime}
+                            </span>
+                            <a href="/blog/posts/${post.slug}.html"
+                               class="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm">
+                                阅读全文
+                                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </article>
             `).join('');
@@ -258,11 +368,11 @@
             // 更新按钮状态
             document.querySelectorAll('[data-category]').forEach(btn => {
                 if (btn.dataset.category === category) {
-                    btn.classList.remove('opacity-70');
-                    btn.classList.add('active');
+                    btn.classList.remove('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
+                    btn.classList.add('bg-blue-600', 'text-white', 'active');
                 } else {
-                    btn.classList.add('opacity-70');
-                    btn.classList.remove('active');
+                    btn.classList.remove('bg-blue-600', 'text-white', 'active');
+                    btn.classList.add('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
                 }
             });
 
@@ -272,7 +382,7 @@
 
         // 页面加载完成后渲染
         window.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => renderPosts(), 500);
+            setTimeout(() => renderPosts(), 300);
         });
     </script>
 
