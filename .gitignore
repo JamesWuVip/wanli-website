@@ -39,3 +39,6 @@ test-*.html
 
 # Base64 encoded files
 *.base64
+
+# Baidu push URLs
+urls.txt
