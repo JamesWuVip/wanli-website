@@ -44,10 +44,8 @@
     </script>
 
     <style>
-        .glass {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
 
         .prose {
@@ -60,7 +58,9 @@
             font-weight: 700;
             margin-top: 2.5rem;
             margin-bottom: 1.25rem;
-            color: #a78bfa;
+            color: #1f2937;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 0.5rem;
         }
 
         .prose h3 {
@@ -68,13 +68,14 @@
             font-weight: 600;
             margin-top: 2rem;
             margin-bottom: 1rem;
-            color: #c4b5fd;
+            color: #374151;
         }
 
         .prose p {
             margin-bottom: 1.25rem;
             line-height: 1.8;
-            color: #e5e7eb;
+            color: #4b5563;
+            font-size: 1.0625rem;
         }
 
         .prose ul, .prose ol {
@@ -84,19 +85,21 @@
 
         .prose li {
             margin-bottom: 0.5rem;
-            color: #e5e7eb;
+            color: #4b5563;
+            line-height: 1.75;
         }
 
         .prose code {
-            background: rgba(102, 126, 234, 0.2);
+            background: #f3f4f6;
             padding: 0.2rem 0.5rem;
             border-radius: 0.25rem;
-            font-family: 'Courier New', monospace;
-            color: #fbbf24;
+            font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+            color: #dc2626;
+            font-size: 0.9em;
         }
 
         .prose pre {
-            background: rgba(0, 0, 0, 0.3);
+            background: #1f2937;
             padding: 1.5rem;
             border-radius: 0.5rem;
             overflow-x: auto;
@@ -107,16 +110,17 @@
         .prose pre code {
             background: transparent;
             padding: 0;
-            color: #a5f3fc;
+            color: #e5e7eb;
         }
 
         .tag {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
-            color: #a78bfa;
+            background: #dbeafe;
+            color: #1e40af;
             padding: 6px 14px;
             border-radius: 12px;
             font-size: 0.875rem;
             display: inline-block;
+            font-weight: 500;
         }
 
         .toc {
@@ -125,19 +129,19 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 text-white min-h-screen">
+<body class="bg-gray-50 text-gray-900 min-h-screen">
 
     <!-- 导航栏 -->
-    <nav class="fixed top-0 w-full z-50 glass">
+    <nav class="fixed top-0 w-full z-50 bg-white border-b border-gray-200 shadow-sm">
         <div class="max-w-6xl mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
-                <a href="/" class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                <a href="/" class="text-2xl font-bold text-blue-600">
                     智理科技
                 </a>
                 <div class="flex gap-6">
-                    <a href="/" class="hover:text-purple-400 transition">首页</a>
-                    <a href="/blog/" class="hover:text-purple-400 transition">博客</a>
-                    <a href="/#contact" class="hover:text-purple-400 transition">联系我们</a>
+                    <a href="/" class="text-gray-600 hover:text-blue-600 transition">首页</a>
+                    <a href="/blog/" class="text-gray-600 hover:text-blue-600 transition">博客</a>
+                    <a href="/#contact" class="text-gray-600 hover:text-blue-600 transition">联系我们</a>
                 </div>
             </div>
         </div>
@@ -405,11 +409,11 @@ for await (const chunk of stream) {
                     如果您的企业也希望构建AI客服系统，或需要其他AI应用开发服务，欢迎联系智理科技。我们拥有丰富的AI项目落地经验，能够为您提供从需求分析、技术选型、开发实施到运维优化的全流程服务。
                 </p>
 
-                <div class="glass rounded-xl p-6 mt-8 mb-8">
-                    <h3 class="text-xl font-bold mb-4">💡 联系我们</h3>
-                    <p class="mb-2">📧 邮箱: <a href="mailto:wuning@wanli.ai" class="text-purple-400 hover:text-purple-300">wuning@wanli.ai</a></p>
-                    <p class="mb-2">🌐 网站: <a href="https://zhili.wanli.ai" class="text-purple-400 hover:text-purple-300">zhili.wanli.ai</a></p>
-                    <p>💬 扫描首页微信二维码，获取技术咨询</p>
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6 mt-8 mb-8">
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">💡 联系我们</h3>
+                    <p class="mb-2 text-gray-700">📧 邮箱: <a href="mailto:wuning@wanli.ai" class="text-blue-600 hover:text-blue-700 font-medium">wuning@wanli.ai</a></p>
+                    <p class="mb-2 text-gray-700">🌐 网站: <a href="https://zhili.wanli.ai" class="text-blue-600 hover:text-blue-700 font-medium">zhili.wanli.ai</a></p>
+                    <p class="text-gray-700">💬 扫描首页微信二维码，获取技术咨询</p>
                 </div>
 
             </article>
@@ -425,7 +429,7 @@ for await (const chunk of stream) {
 
             <!-- 返回博客列表 -->
             <div class="text-center mt-12">
-                <a href="/blog/" class="inline-block glass px-8 py-3 rounded-lg hover:bg-white/10 transition">
+                <a href="/blog/" class="inline-block bg-white border border-gray-300 text-gray-700 px-8 py-3 rounded-lg hover:bg-gray-50 hover:border-blue-500 transition">
                     ← 返回博客列表
                 </a>
             </div>
@@ -434,11 +438,11 @@ for await (const chunk of stream) {
     </main>
 
     <!-- 页脚 -->
-    <footer class="glass py-8 mt-16">
-        <div class="max-w-6xl mx-auto px-4 text-center text-gray-400">
+    <footer class="bg-white border-t border-gray-200 py-8 mt-16">
+        <div class="max-w-6xl mx-auto px-4 text-center text-gray-600">
             <p>&copy; 2024 北京智理科技有限公司 |
-                <a href="/" class="hover:text-purple-400">返回首页</a> |
-                <a href="mailto:wuning@wanli.ai" class="hover:text-purple-400">联系我们</a>
+                <a href="/" class="hover:text-blue-600">返回首页</a> |
+                <a href="mailto:wuning@wanli.ai" class="hover:text-blue-600">联系我们</a>
             </p>
         </div>
     </footer>
