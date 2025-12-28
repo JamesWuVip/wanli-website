@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技术博客 - 智理科技 | AI应用开发技术分享</title>
+    <meta name="description" content="智理科技官方技术博客，分享AI应用开发、企业管理系统开发、小程序开发等前沿技术文章和最佳实践">
+    <meta name="keywords" content="AI应用开发,技术博客,企业管理系统,小程序开发,技术外包,智理科技">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="技术博客 - 智理科技">
+    <meta property="og:description" content="分享AI应用开发、企业管理系统等前沿技术文章">
+    <meta property="og:image" content="https://zhili.wanli.ai/og-image.jpg">
+    <meta property="og:url" content="https://zhili.wanli.ai/blog/">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- 性能优化 -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+
+    <!-- 百度统计 -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?899d2895125d00f40d4e27a4e9490d14";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HYYQPK3KW2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HYYQPK3KW2');
+    </script>
+
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .post-card {
+            transition: all 0.3s ease;
+        }
+
+        .post-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(102, 126, 234, 0.2);
+        }
+
+        .tag {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+            color: #a78bfa;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            display: inline-block;
+        }
+
+        .category-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 text-white min-h-screen">
+
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 w-full z-50 glass">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="/" class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    智理科技
+                </a>
+                <div class="flex gap-6">
+                    <a href="/" class="hover:text-purple-400 transition">首页</a>
+                    <a href="/blog/" class="text-purple-400">博客</a>
+                    <a href="/#contact" class="hover:text-purple-400 transition">联系我们</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主内容区域 -->
+    <main class="pt-24 pb-16">
+        <div class="max-w-6xl mx-auto px-4">
+
+            <!-- 页面标题 -->
+            <div class="text-center mb-12">
+                <h1 class="text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    技术博客
+                </h1>
+                <p class="text-gray-300 text-lg">
+                    分享AI应用开发、企业系统架构、技术外包最佳实践
+                </p>
+            </div>
+
+            <!-- 分类导航 -->
+            <div class="flex flex-wrap gap-3 justify-center mb-12" id="categoryFilter">
+                <button onclick="filterPosts('all')" class="category-badge active" data-category="all">
+                    全部
+                </button>
+                <button onclick="filterPosts('ai')" class="category-badge opacity-70 hover:opacity-100" data-category="ai">
+                    AI应用开发
+                </button>
+                <button onclick="filterPosts('system')" class="category-badge opacity-70 hover:opacity-100" data-category="system">
+                    企业管理系统
+                </button>
+                <button onclick="filterPosts('architecture')" class="category-badge opacity-70 hover:opacity-100" data-category="architecture">
+                    架构设计
+                </button>
+                <button onclick="filterPosts('case')" class="category-badge opacity-70 hover:opacity-100" data-category="case">
+                    案例分析
+                </button>
+            </div>
+
+            <!-- 博客文章列表 -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="postList">
+                <!-- 文章将通过JavaScript动态加载 -->
+            </div>
+
+            <!-- 加载状态 -->
+            <div id="loading" class="text-center py-12">
+                <div class="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple-500"></div>
+                <p class="mt-4 text-gray-400">加载文章中...</p>
+            </div>
+
+            <!-- 空状态 -->
+            <div id="emptyState" class="text-center py-12 hidden">
+                <p class="text-gray-400 text-lg">该分类下暂无文章</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="glass py-8 mt-16">
+        <div class="max-w-6xl mx-auto px-4 text-center text-gray-400">
+            <p>&copy; 2024 北京智理科技有限公司 |
+                <a href="/" class="hover:text-purple-400">返回首页</a> |
+                <a href="mailto:wuning@wanli.ai" class="hover:text-purple-400">联系我们</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // 博客文章数据（后续可以从JSON文件或API加载）
+        const blogPosts = [
+            {
+                id: 1,
+                title: "如何使用GPT-4构建智能客服系统",
+                slug: "build-ai-customer-service-with-gpt4",
+                excerpt: "深入探讨如何利用GPT-4 API构建一个高效的智能客服系统，包括提示词工程、上下文管理、多轮对话等核心技术要点。",
+                category: "ai",
+                categoryName: "AI应用开发",
+                tags: ["GPT-4", "客服系统", "提示词工程"],
+                author: "智理科技技术团队",
+                date: "2024-12-20",
+                readTime: "8分钟",
+                cover: "https://via.placeholder.com/400x250/667eea/ffffff?text=AI+Customer+Service"
+            },
+            {
+                id: 2,
+                title: "企业管理系统微服务架构实战",
+                slug: "enterprise-microservices-architecture",
+                excerpt: "从单体应用到微服务架构的演进之路，分享我们在企业管理系统开发中的微服务拆分策略、服务治理和性能优化经验。",
+                category: "architecture",
+                categoryName: "架构设计",
+                tags: ["微服务", "架构设计", "性能优化"],
+                author: "智理科技技术团队",
+                date: "2024-12-18",
+                readTime: "12分钟",
+                cover: "https://via.placeholder.com/400x250/764ba2/ffffff?text=Microservices"
+            },
+            {
+                id: 3,
+                title: "教育行业AI应用落地案例分析",
+                slug: "ai-in-education-case-study",
+                excerpt: "以我们为某知名教育机构开发的AI辅导系统为例，分析教育行业AI应用的需求分析、技术选型、落地实施全流程。",
+                category: "case",
+                categoryName: "案例分析",
+                tags: ["教育AI", "案例分析", "项目管理"],
+                author: "智理科技技术团队",
+                date: "2024-12-15",
+                readTime: "10分钟",
+                cover: "https://via.placeholder.com/400x250/F093FB/ffffff?text=AI+Education"
+            }
+        ];
+
+        let currentFilter = 'all';
+
+        // 渲染博客列表
+        function renderPosts(filter = 'all') {
+            const postList = document.getElementById('postList');
+            const loading = document.getElementById('loading');
+            const emptyState = document.getElementById('emptyState');
+
+            // 过滤文章
+            const filteredPosts = filter === 'all'
+                ? blogPosts
+                : blogPosts.filter(post => post.category === filter);
+
+            // 显示/隐藏加载状态
+            loading.classList.add('hidden');
+
+            if (filteredPosts.length === 0) {
+                postList.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+
+            // 渲染文章卡片
+            postList.innerHTML = filteredPosts.map(post => `
+                <article class="post-card glass rounded-xl overflow-hidden">
+                    <img src="${post.cover}" alt="${post.title}" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="category-badge text-xs">${post.categoryName}</span>
+                            <span class="text-gray-400 text-sm">${post.date}</span>
+                            <span class="text-gray-400 text-sm">· ${post.readTime}</span>
+                        </div>
+                        <h2 class="text-xl font-bold mb-3 hover:text-purple-400 transition">
+                            <a href="/blog/posts/${post.slug}.html">${post.title}</a>
+                        </h2>
+                        <p class="text-gray-300 mb-4 line-clamp-3">
+                            ${post.excerpt}
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            ${post.tags.map(tag => `<span class="tag">#${tag}</span>`).join('')}
+                        </div>
+                        <a href="/blog/posts/${post.slug}.html"
+                           class="inline-block text-purple-400 hover:text-purple-300 font-semibold">
+                            阅读全文 →
+                        </a>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        // 过滤文章
+        function filterPosts(category) {
+            currentFilter = category;
+
+            // 更新按钮状态
+            document.querySelectorAll('[data-category]').forEach(btn => {
+                if (btn.dataset.category === category) {
+                    btn.classList.remove('opacity-70');
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.add('opacity-70');
+                    btn.classList.remove('active');
+                }
+            });
+
+            // 重新渲染
+            renderPosts(category);
+        }
+
+        // 页面加载完成后渲染
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => renderPosts(), 500);
+        });
+    </script>
+
+    <!-- 结构化数据 - Blog -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "智理科技技术博客",
+      "description": "分享AI应用开发、企业管理系统开发、架构设计等技术文章",
+      "url": "https://zhili.wanli.ai/blog/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "北京智理科技有限公司",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://zhili.wanli.ai/og-image.jpg"
+        }
+      }
+    }
+    </script>
+
+</body>
+</html>
