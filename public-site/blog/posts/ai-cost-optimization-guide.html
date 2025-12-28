@@ -47,37 +47,46 @@
     </script>
 
     <style>
-        .glass {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Microsoft YaHei";
         }
 
         .prose {
             max-width: 800px;
             margin: 0 auto;
+            color: #374151;
         }
 
         .prose h2 {
             font-size: 1.875rem;
             font-weight: 700;
-            margin-top: 2.5rem;
-            margin-bottom: 1.25rem;
-            color: #a78bfa;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            color: #111827;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e5e7eb;
         }
 
         .prose h3 {
             font-size: 1.5rem;
             font-weight: 600;
             margin-top: 2rem;
-            margin-bottom: 1rem;
-            color: #c4b5fd;
+            margin-bottom: 0.75rem;
+            color: #1f2937;
+        }
+
+        .prose h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #374151;
         }
 
         .prose p {
             margin-bottom: 1.25rem;
-            line-height: 1.8;
-            color: #e5e7eb;
+            line-height: 1.75;
+            color: #4b5563;
         }
 
         .prose ul, .prose ol {
@@ -87,107 +96,197 @@
 
         .prose li {
             margin-bottom: 0.5rem;
-            color: #e5e7eb;
+            color: #4b5563;
+            line-height: 1.75;
         }
 
         .prose code {
-            background: rgba(102, 126, 234, 0.2);
-            padding: 0.2rem 0.5rem;
+            background: #f3f4f6;
+            padding: 0.2rem 0.4rem;
             border-radius: 0.25rem;
-            font-family: 'Courier New', monospace;
-            color: #fbbf24;
+            font-family: 'SF Mono', 'Monaco', 'Cascadia Code', 'Courier New', monospace;
+            color: #dc2626;
+            font-size: 0.875em;
         }
 
         .prose pre {
-            background: rgba(0, 0, 0, 0.3);
+            background: #1f2937;
             padding: 1.5rem;
             border-radius: 0.5rem;
             overflow-x: auto;
-            margin-bottom: 1.25rem;
-            border: 1px solid rgba(102, 126, 234, 0.3);
+            margin-bottom: 1.5rem;
+            border: 1px solid #374151;
         }
 
         .prose pre code {
             background: transparent;
             padding: 0;
-            color: #a5f3fc;
+            color: #e5e7eb;
+            font-size: 0.875rem;
         }
 
         .prose a {
-            color: #a78bfa;
-            text-decoration: underline;
+            color: #2563eb;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
         }
 
         .prose a:hover {
-            color: #c4b5fd;
+            border-bottom-color: #2563eb;
         }
 
         .prose strong {
             font-weight: 600;
-            color: #fbbf24;
+            color: #111827;
         }
 
         .prose blockquote {
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #2563eb;
             padding-left: 1.5rem;
             margin: 1.5rem 0;
-            color: #d1d5db;
+            color: #6b7280;
             font-style: italic;
         }
 
-        .tag {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
-            color: #a78bfa;
-            padding: 6px 14px;
-            border-radius: 12px;
-            font-size: 0.875rem;
+        .prose table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .prose th {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .prose td {
+            border: 1px solid #e5e7eb;
+            padding: 0.75rem;
+            color: #4b5563;
+        }
+
+        .prose tr:nth-child(even) {
+            background: #f9fafb;
+        }
+
+        .prose img {
+            max-width: 100%;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .category-badge {
             display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .category-ai { background: #dbeafe; color: #1e40af; }
+        .category-architecture { background: #fce7f3; color: #9f1239; }
+        .category-system { background: #dcfce7; color: #166534; }
+        .category-case { background: #fef3c7; color: #92400e; }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #f3f4f6;
+            color: #6b7280;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .nav-link {
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2563eb;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 text-white min-h-screen">
+<body class="bg-gray-50 text-gray-900">
 
     <!-- 导航栏 -->
-    <nav class="fixed top-0 w-full z-50 glass">
-        <div class="max-w-6xl mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <a href="/" class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="/" class="text-xl font-bold text-gray-900 hover:text-blue-600 transition">
                     智理科技
                 </a>
-                <div class="flex gap-6">
-                    <a href="/" class="hover:text-purple-400 transition">首页</a>
-                    <a href="/blog/" class="hover:text-purple-400 transition">博客</a>
-                    <a href="/#contact" class="hover:text-purple-400 transition">联系我们</a>
+                <div class="flex gap-8">
+                    <a href="/" class="nav-link text-gray-600 hover:text-gray-900 transition">首页</a>
+                    <a href="/blog/" class="nav-link text-blue-600 font-medium">博客</a>
+                    <a href="/#contact" class="nav-link text-gray-600 hover:text-gray-900 transition">联系我们</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- 文章内容 -->
-    <main class="pt-24 pb-16">
-        <div class="max-w-6xl mx-auto px-4">
+    <main class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <!-- 文章头部 -->
             <header class="mb-12">
-                <div class="text-center max-w-3xl mx-auto">
-                    <div class="flex justify-center gap-3 mb-4">
-                        <span class="tag">AI应用开发</span>
-                    </div>
-                    <h1 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                        AI应用成本优化完全指南：从每月$5000降至$800的实战经验
-                    </h1>
-                    <div class="flex justify-center items-center gap-4 text-gray-400">
-                        <span>智理科技技术团队</span>
-                        <span>·</span>
-                        <time datetime="2024-12-31">2024年12月31日</time>
-                        <span>·</span>
-                        <span>20分钟</span>
-                    </div>
+                <div class="mb-6">
+                    <a href="/blog/" class="inline-flex items-center text-gray-600 hover:text-gray-900 text-sm">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
+                        返回博客列表
+                    </a>
                 </div>
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="category-badge category-ai">AI应用开发</span>
+                    <span class="text-gray-500 text-sm">2024年12月31日</span>
+                    <span class="text-gray-400">·</span>
+                    <span class="text-gray-500 text-sm flex items-center">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        20分钟
+                    </span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+                    AI应用成本优化完全指南：从每月$5000降至$800的实战经验
+                </h1>
+                <p class="text-xl text-gray-600 leading-relaxed">
+                    分享真实项目中将AI应用成本从每月$5000降至$800的完整优化策略，涵盖模型选型、Prompt优化、缓存策略、本地化部署等多个维度
+                </p>
             </header>
 
             <!-- 文章主体 -->
-            <article class="prose">
+            <article class="prose prose-lg">
                 <h2>一、真实案例：成本优化之路</h2>
 <h3>1.1 项目背景</h3>
 <p>某在线教育平台的AI作文批改系统：</p>
@@ -1226,28 +1325,46 @@ def analyze_cost_by_user():
 </ul>
 <p>让AI应用更经济、更高效！</p>
 
-
-                <div class="glass rounded-xl p-6 mt-8 mb-8">
-                    <h3 class="text-xl font-bold mb-4">💡 联系我们</h3>
-                    <p class="mb-2">📧 邮箱: <a href="mailto:wuning@wanli.ai" class="text-purple-400 hover:text-purple-300">wuning@wanli.ai</a></p>
-                    <p class="mb-2">🌐 网站: <a href="https://zhili.wanli.ai" class="text-purple-400 hover:text-purple-300">zhili.wanli.ai</a></p>
-                    <p>💬 扫描首页微信二维码，获取技术咨询</p>
-                </div>
             </article>
 
+            <!-- 联系卡片 -->
+            <div class="contact-card mt-12">
+                <h3 class="text-xl font-bold text-white mb-3">💡 需要技术支持？</h3>
+                <p class="text-white/90 mb-4">智理科技专注于企业级AI应用开发，我们提供从需求分析、技术选型到开发上线的全流程服务。</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="mailto:wuning@wanli.ai" class="inline-flex items-center text-white hover:text-white/90">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        wuning@wanli.ai
+                    </a>
+                    <a href="https://zhili.wanli.ai" class="inline-flex items-center text-white hover:text-white/90">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                        </svg>
+                        zhili.wanli.ai
+                    </a>
+                </div>
+            </div>
+
             <!-- 文章标签 -->
-            <div class="flex flex-wrap gap-3 mt-8 mb-12 justify-center">
-                <span class="tag">#成本优化</span>
-                <span class="tag">#AI应用</span>
-                <span class="tag">#GPT-4</span>
-                <span class="tag">#开源模型</span>
-                <span class="tag">#性能优化</span>
+            <div class="mt-8 pt-8 border-t border-gray-200">
+                <div class="flex flex-wrap gap-2">
+                    <span class="tag">#成本优化</span>
+                    <span class="tag">#AI应用</span>
+                    <span class="tag">#GPT-4</span>
+                    <span class="tag">#开源模型</span>
+                    <span class="tag">#性能优化</span>
+                </div>
             </div>
 
             <!-- 返回博客列表 -->
             <div class="text-center mt-12">
-                <a href="/blog/" class="inline-block glass px-8 py-3 rounded-lg hover:bg-white/10 transition">
-                    ← 返回博客列表
+                <a href="/blog/" class="inline-flex items-center px-6 py-3 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 hover:border-gray-400 transition text-gray-700 font-medium">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    返回博客列表
                 </a>
             </div>
 
@@ -1255,12 +1372,14 @@ def analyze_cost_by_user():
     </main>
 
     <!-- 页脚 -->
-    <footer class="glass py-8 mt-16">
-        <div class="max-w-6xl mx-auto px-4 text-center text-gray-400">
-            <p>&copy; 2024 北京智理科技有限公司 |
-                <a href="/" class="hover:text-purple-400">返回首页</a> |
-                <a href="mailto:wuning@wanli.ai" class="hover:text-purple-400">联系我们</a>
-            </p>
+    <footer class="bg-white border-t border-gray-200 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center text-gray-500 text-sm">
+                <p>&copy; 2024 北京智理科技有限公司 |
+                    <a href="/" class="hover:text-blue-600">返回首页</a> |
+                    <a href="mailto:wuning@wanli.ai" class="hover:text-blue-600">联系我们</a>
+                </p>
+            </div>
         </div>
     </footer>
 
