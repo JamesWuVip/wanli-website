@@ -42,3 +42,6 @@ test-*.html
 
 # Baidu push URLs
 urls.txt
+
+# Temporary image files
+img/
