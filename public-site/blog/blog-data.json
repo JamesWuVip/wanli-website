@@ -1,0 +1,78 @@
+[
+  {
+    "id": 1766893859408.8313,
+    "title": "AI应用成本优化完全指南：从每月$5000降至$800的实战经验",
+    "slug": "ai-cost-optimization-guide",
+    "excerpt": "分享真实项目中将AI应用成本从每月$5000降至$800的完整优化策略，涵盖模型选型、Prompt优化、缓存策略、本地化部署等多个维度",
+    "category": "ai",
+    "categoryName": "AI应用开发",
+    "tags": [
+      "成本优化",
+      "AI应用",
+      "GPT-4",
+      "开源模型",
+      "性能优化"
+    ],
+    "author": "智理科技技术团队",
+    "date": "2024-12-31",
+    "readTime": "20分钟",
+    "cover": "https://via.placeholder.com/400x250/667eea/ffffff?text=AI%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91"
+  },
+  {
+    "id": 1766893859413.1023,
+    "title": "提示词工程完全指南：从入门到精通",
+    "slug": "prompt-engineering-complete-guide",
+    "excerpt": "系统讲解提示词工程的核心原理、设计模式和最佳实践，涵盖Zero-Shot、Few-Shot、Chain-of-Thought等技术，附大量真实案例和可复用模板",
+    "category": "ai",
+    "categoryName": "AI应用开发",
+    "tags": [
+      "提示词工程",
+      "GPT-4",
+      "Claude",
+      "Prompt",
+      "AI应用"
+    ],
+    "author": "智理科技技术团队",
+    "date": "2024-12-30",
+    "readTime": "18分钟",
+    "cover": "https://via.placeholder.com/400x250/667eea/ffffff?text=AI%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91"
+  },
+  {
+    "id": 1766893859411.7808,
+    "title": "企业级微服务架构设计与落地实践",
+    "slug": "enterprise-microservices-architecture",
+    "excerpt": "从单体应用到微服务的完整演进路径，涵盖服务拆分策略、API网关设计、分布式事务处理、服务治理等核心技术，并分享真实项目中的踩坑经验",
+    "category": "architecture",
+    "categoryName": "架构设计",
+    "tags": [
+      "微服务",
+      "Spring Cloud",
+      "分布式系统",
+      "架构设计",
+      "服务治理"
+    ],
+    "author": "智理科技技术团队",
+    "date": "2024-12-29",
+    "readTime": "15分钟",
+    "cover": "https://via.placeholder.com/400x250/667eea/ffffff?text=%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1"
+  },
+  {
+    "id": 1766893859418.0447,
+    "title": "RAG技术在企业知识库中的应用实践",
+    "slug": "rag-enterprise-knowledge-base",
+    "excerpt": "深入解析RAG（检索增强生成）技术如何解决企业知识库应用痛点，包含完整的技术架构、向量数据库选型、检索策略优化及真实案例分享",
+    "category": "ai",
+    "categoryName": "AI应用开发",
+    "tags": [
+      "RAG",
+      "向量数据库",
+      "企业知识库",
+      "LangChain",
+      "AI应用"
+    ],
+    "author": "智理科技技术团队",
+    "date": "2024-12-28",
+    "readTime": "12分钟",
+    "cover": "https://via.placeholder.com/400x250/667eea/ffffff?text=AI%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91"
+  }
+]
