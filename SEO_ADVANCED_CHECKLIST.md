@@ -52,37 +52,35 @@
 
 ### 高优先级（建议本周完成）
 
-#### 1. 提交到搜索引擎平台 ⭐⭐⭐⭐⭐
+#### 1. 提交到搜索引擎平台 ✅ **已完成**
 **重要性**: 极高
-**预计时间**: 1小时
+**完成时间**: 2024-12-28
 **预期效果**: 加快收录速度，获得Rich Snippets展示
 
-**操作步骤**:
+**已完成操作**:
 ```bash
-# 1. 百度搜索资源平台
-# https://ziyuan.baidu.com
-- 验证网站所有权（HTML文件验证或DNS验证）
-- 提交sitemap: https://zhili.wanli.ai/sitemap.xml
-- 手动提交首页和重要页面URL
-- 运行脚本自动推送: bash baidu-push.sh
+# ✅ 百度搜索资源平台
+- ✅ 验证网站所有权
+- ✅ 提交sitemap: https://zhili.wanli.ai/sitemap.xml
+- ✅ 手动推送首页和重要页面URL
+- ✅ 运行自动推送脚本: bash baidu-push.sh
 
-# 2. Google Search Console
-# https://search.google.com/search-console
-- 验证网站所有权
-- 提交sitemap: https://zhili.wanli.ai/sitemap.xml
-- 检查移动端适配性
-- 查看Rich Results测试结果
-
-# 3. Bing Webmaster Tools
-# https://www.bing.com/webmasters
-- 验证网站所有权
-- 提交sitemap
+# ✅ Google Search Console
+- ✅ 验证网站所有权
+- ✅ 提交sitemap: https://zhili.wanli.ai/sitemap.xml
+- ✅ 请求编入索引
 ```
 
-**验证方法**:
-- 7天后检查百度统计的"搜索词"数据
-- Google Search Console查看"效果"报告
-- Rich Results Test验证结构化数据
+**后续监控** ⏳:
+- ☐ 7天后检查百度统计的"搜索词"数据
+- ☐ Google Search Console查看"效果"报告
+- ☐ Rich Results Test验证结构化数据展示
+- ☐ 监控收录页面数量变化
+
+**验证链接**:
+- 百度搜索资源平台: https://ziyuan.baidu.com
+- Google Search Console: https://search.google.com/search-console
+- Rich Results Test: https://search.google.com/test/rich-results
 
 ---
 
@@ -209,11 +207,15 @@
 - ✅ 掘金发布准备（2篇已清理格式）
 
 **掘金发布进度**:
-- ✅ RAG技术文章：已准备完成（rag-enterprise-knowledge-base-clean.md + rag-cover.jpg）
-- ✅ 微服务架构文章：已准备完成（microservices-clean.md + microservices-cover.jpg）
-- ⏳ Week 2-3: 发布"企业级微服务架构设计与落地实践"
-- ⏳ Week 3-4: 发布"提示词工程完全指南"
-- ⏳ Week 4+: 发布"AI应用成本优化完全指南"
+- ✅ RAG技术文章：已发布（rag-enterprise-knowledge-base-clean.md + rag-cover.jpg）
+- ✅ 微服务架构文章：已发布（microservices-clean.md + microservices-cover.jpg）
+- ⏳ Week 3-4: 准备并发布"提示词工程完全指南"
+- ⏳ Week 4+: 准备并发布"AI应用成本优化完全指南"
+
+**发布时间建议**:
+- 间隔3-5天发布，避免被判定为批量内容
+- 最佳发布时间：工作日上午9-11点或下午3-5点
+- 发布后及时回复评论，提高互动率
 
 **第2个月**:
 - ⏳ Week 1: LangChain实战：构建企业级AI应用
@@ -471,18 +473,22 @@ git push origin main
 3. ✅ 所有博客文章SEO优化（TechArticle Schema + 社交分享按钮 + 相关推荐）
 4. ✅ 统一视觉风格（所有页面改为专业白色主题）
 5. ✅ 完善结构化数据（6种Schema类型全覆盖）
+6. ✅ 提交网站到百度搜索资源平台
+7. ✅ 提交网站到Google Search Console
+8. ✅ 发布第2篇文章到掘金（企业级微服务架构）
+9. ✅ 运行百度URL推送
 
 **优先完成**（按重要性排序）:
-1. ☐ 提交网站到百度搜索资源平台
-2. ☐ 提交网站到Google Search Console
-3. ☐ 发布第2篇文章到掘金（企业级微服务架构）
-4. ☐ 完善掘金个人资料（使用[PERSONAL_BIO.md](PERSONAL_BIO.md)）
-5. ☐ 运行 `bash baidu-push.sh` 推送URL
+1. ☐ 完善掘金个人资料（使用[PERSONAL_BIO.md](PERSONAL_BIO.md)）
+2. ☐ 在百度搜索资源平台验证sitemap提交状态
+3. ☐ 在Google Search Console检查收录情况
+4. ☐ 准备第3篇掘金文章（提示词工程完全指南）
 
 **次要任务**:
-6. ☐ PageSpeed Insights测试并记录Core Web Vitals
-7. ☐ Google Mobile-Friendly Test
-8. ☐ 寻找2-3个外链机会
+5. ☐ PageSpeed Insights测试并记录Core Web Vitals
+6. ☐ Google Mobile-Friendly Test
+7. ☐ 寻找2-3个外链机会
+8. ☐ 回复掘金文章评论，与读者互动
 
 **长期任务**:
 9. ☐ 制定Q1内容日历
