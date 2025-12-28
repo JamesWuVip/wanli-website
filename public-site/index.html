@@ -37,8 +37,11 @@
     <meta name="google-site-verification" content="NmSM5pAwwIQ6tUDkqN2NNmvgnb0_J15gsG4QGVAND0w" />
 
     <!-- 性能优化 - 资源预加载 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="preload" as="image" href="/wechat-qr.webp" type="image/webp">
 
     <!-- 结构化数据 - 组织信息 -->
@@ -163,6 +166,69 @@
     }
     </script>
 
+    <!-- 结构化数据 - WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "智理科技",
+      "alternateName": "北京智理科技有限公司",
+      "url": "https://zhili.wanli.ai",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://zhili.wanli.ai/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- 结构化数据 - Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "AI应用开发与技术外包服务",
+      "provider": {
+        "@type": "Organization",
+        "name": "北京智理科技有限公司"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "中国"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "技术服务",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI应用开发",
+              "description": "基于GPT-4、Claude等前沿模型的AI应用开发服务"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "企业管理系统开发",
+              "description": "ERP、CRM、OA等企业级管理系统定制开发"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "小程序开发",
+              "description": "微信小程序、支付宝小程序等移动应用开发"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+
     <!-- Google Analytics 4 (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HYYQPK3KW2"></script>
     <script>
@@ -195,9 +261,9 @@
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
-        
+
         * {
-            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
         }
         
         body {
@@ -388,7 +454,20 @@
 <body>
     <!-- 粒子背景 -->
     <div id="particles"></div>
-    
+
+    <!-- 社交分享浮动按钮 -->
+    <div id="socialShare" class="fixed right-6 bottom-24 z-40 flex flex-col gap-3">
+        <button onclick="shareToWeChat()" class="w-12 h-12 rounded-full glass flex items-center justify-center hover:scale-110 transition-all hover:bg-white/20 group" title="分享到微信">
+            <span class="text-2xl">💬</span>
+        </button>
+        <button onclick="shareToWeibo()" class="w-12 h-12 rounded-full glass flex items-center justify-center hover:scale-110 transition-all hover:bg-white/20 group" title="分享到微博">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20.194 14.197c.086-.512.13-1.041.13-1.581 0-4.694-4.04-8.5-9.019-8.5-4.98 0-9.02 3.806-9.02 8.5 0 4.695 4.04 8.5 9.02 8.5 1.667 0 3.23-.436 4.599-1.19.353.667.723 1.289 1.102 1.852.45.67 1.35.86 2.005.424.655-.437.82-1.318.37-1.988-.635-.946-1.216-2.013-1.686-3.017zm-9.889 4.89c-3.383 0-6.125-2.41-6.125-5.383 0-2.972 2.742-5.383 6.125-5.383s6.124 2.41 6.124 5.383c0 2.973-2.741 5.383-6.124 5.383z"/><circle cx="11.305" cy="14.704" r="2"/></svg>
+        </button>
+        <button onclick="copyLink()" class="w-12 h-12 rounded-full glass flex items-center justify-center hover:scale-110 transition-all hover:bg-white/20 group" title="复制链接">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+        </button>
+    </div>
+
     <!-- 导航栏 -->
     <nav class="fixed w-full top-0 z-50 glass-dark">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -1500,14 +1579,45 @@
                 }
             });
         }, observerOptions);
-        
+
         // 观察所有服务卡片
         document.querySelectorAll('.hover-lift').forEach(el => {
             observer.observe(el);
         });
-        
+
         // 初始化
         createParticles();
+
+        // ===== 社交分享功能 =====
+        function shareToWeChat() {
+            // 显示二维码提示
+            showNotification('请使用微信扫描页面底部二维码分享', 'success');
+            // 滚动到联系区域
+            document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function shareToWeibo() {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent('智理科技 - 专业AI技术开发团队 | 承接企业软件开发外包项目');
+            const weiboUrl = `https://service.weibo.com/share/share.php?url=${url}&title=${title}&pic=https://zhili.wanli.ai/og-image.jpg`;
+            window.open(weiboUrl, '_blank', 'width=600,height=400');
+        }
+
+        function copyLink() {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                showNotification('✅ 链接已复制到剪贴板！', 'success');
+            }).catch(() => {
+                // 降级方案
+                const textarea = document.createElement('textarea');
+                textarea.value = url;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                showNotification('✅ 链接已复制到剪贴板！', 'success');
+            });
+        }
     </script>
 </body>
 </html>

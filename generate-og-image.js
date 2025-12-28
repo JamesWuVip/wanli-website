@@ -38,7 +38,7 @@ async function generateOGImage() {
     });
 
     // 等待Canvas绘制完成
-    await page.waitForTimeout(2000);
+    await new Promise(resolve => setTimeout(resolve, 2000));
 
     // 截图保存
     const outputPath = join(__dirname, 'public-site/og-image.jpg');
