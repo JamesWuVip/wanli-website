@@ -142,7 +142,7 @@ window.addEventListener('scroll', () => {
 `;
 
 // 读取所有博客文章HTML
-const postsDir = path.join(__dirname, '../public-site/blog/posts');
+const postsDir = path.join(__dirname, 'public-site/blog/posts');
 const files = fs.readdirSync(postsDir).filter(f => f.endsWith('.html'));
 
 console.log('🔗 添加社交分享按钮...\n');

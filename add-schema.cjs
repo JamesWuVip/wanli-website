@@ -77,7 +77,7 @@ function generateBreadcrumbSchema(article) {
 
 // 读取blog-data.json
 const articles = JSON.parse(
-  fs.readFileSync(path.join(__dirname, '../public-site/blog/blog-data.json'), 'utf-8')
+  fs.readFileSync(path.join(__dirname, 'public-site/blog/blog-data.json'), 'utf-8')
 );
 
 console.log('📊 生成结构化数据...\n');
@@ -86,7 +86,7 @@ articles.forEach(article => {
   const articleSchema = generateArticleSchema(article);
   const breadcrumbSchema = generateBreadcrumbSchema(article);
 
-  const htmlPath = path.join(__dirname, `../public-site/blog/posts/${article.slug}.html`);
+  const htmlPath = path.join(__dirname, `public-site/blog/posts/${article.slug}.html`);
 
   if (!fs.existsSync(htmlPath)) {
     console.log(`⚠️  跳过: ${article.slug}.html (文件不存在)`);
