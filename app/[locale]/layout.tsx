@@ -1,5 +1,6 @@
 import {notFound} from 'next/navigation';
-import {getTranslations} from 'next-intl/server';
+import {getTranslations, getMessages} from 'next-intl/server';
+import {NextIntlClientProvider} from 'next-intl';
 import '@/app/globals.css';
 
 type Props = {
@@ -12,17 +13,18 @@ export function generateStaticParams() {
 
 export async function generateMetadata({params: {locale}}: Props) {
   const t = await getTranslations({locale, namespace: 'hero'});
+  const baseUrl = 'https://zhili.wanli.ai';
 
   return {
     title: `${t('title')} - ${t('subtitle')}`,
     description: t('description'),
     keywords: 'AI应用开发,企业管理系统,技术外包,网站开发,移动应用,北京技术团队',
     alternates: {
-      canonical: `/${locale}`,
+      canonical: `${baseUrl}/${locale}`,
       languages: {
-        'zh-CN': '/zh-CN',
-        'zh-TW': '/zh-TW',
-        'en': '/en',
+        'zh-CN': `${baseUrl}/zh-CN`,
+        'zh-TW': `${baseUrl}/zh-TW`,
+        'en': `${baseUrl}/en`,
       },
     },
     openGraph: {
@@ -47,13 +49,19 @@ export default async function LocaleLayout({
     notFound();
   }
 
+  const messages = await getMessages();
+
   return (
     <html lang={locale}>
       <head>
         <meta name="baidu-site-verification" content="codeva-zhili" />
         <meta name="google-site-verification" content="google-zhili" />
       </head>
-      <body>{children}</body>
+      <body>
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
+      </body>
     </html>
   );
 }

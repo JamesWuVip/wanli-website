@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://zhilitech.com'
+  const baseUrl = 'https://zhili.wanli.ai'
   const locales = ['zh-CN', 'zh-TW', 'en']
 
   const routes = locales.flatMap(locale => [

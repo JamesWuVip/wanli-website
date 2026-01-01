@@ -6,8 +6,8 @@ export default function StructuredData() {
     '@type': 'Organization',
     name: '北京智理科技有限公司',
     alternateName: 'Zhili Technology',
-    url: 'https://zhilitech.com',
-    logo: 'https://zhilitech.com/logo.png',
+    url: 'https://zhili.wanli.ai',
+    logo: 'https://zhili.wanli.ai/logo.png',
     description: '专业的AI应用开发和企业级技术解决方案提供商',
     address: {
       '@type': 'PostalAddress',
@@ -31,10 +31,10 @@ export default function StructuredData() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: '智理科技',
-    url: 'https://zhilitech.com',
+    url: 'https://zhili.wanli.ai',
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://zhilitech.com/search?q={search_term_string}',
+      target: 'https://zhili.wanli.ai/search?q={search_term_string}',
       'query-input': 'required name=search_term_string',
     },
   };
@@ -43,9 +43,9 @@ export default function StructuredData() {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
     name: '北京智理科技有限公司',
-    image: 'https://zhilitech.com/logo.png',
-    '@id': 'https://zhilitech.com',
-    url: 'https://zhilitech.com',
+    image: 'https://zhili.wanli.ai/logo.png',
+    '@id': 'https://zhili.wanli.ai',
+    url: 'https://zhili.wanli.ai',
     telephone: '+86-10-XXXX-XXXX',
     address: {
       '@type': 'PostalAddress',

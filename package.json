@@ -8,7 +8,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "next-sitemap",
     "seo": "node seo-monitor.js",
     "seo:watch": "node seo-monitor.js --watch",
     "seo:help": "node seo-monitor.js --help"

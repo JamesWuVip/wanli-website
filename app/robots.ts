@@ -16,6 +16,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: 'https://zhilitech.com/sitemap.xml',
+    sitemap: 'https://zhili.wanli.ai/sitemap.xml',
   }
 }
