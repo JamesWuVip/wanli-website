@@ -1,5 +1,12 @@
 # AI应用成本优化完全指南：从$5000降至$800 | 智理科技
 
+**封面图建议**：搜索 "cost optimization" 或 "money saving" 或使用以下免费图库
+- Unsplash: https://unsplash.com/s/photos/savings
+- Pexels: https://www.pexels.com/search/finance/
+- 推荐关键词：图表下降、绿色箭头、钱币、成本控制
+
+---
+
 > 分享我们在实际项目中将AI调用成本降低85%的实战经验。
 
 ## 前言

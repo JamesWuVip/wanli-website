@@ -1,5 +1,12 @@
 # 如何使用GPT-4构建智能客服系统 | 智理科技
 
+**封面图建议**：搜索 "customer service" 或 "chatbot" 或使用以下免费图库
+- Unsplash: https://unsplash.com/s/photos/customer-service
+- Pexels: https://www.pexels.com/search/chatbot/
+- 推荐关键词：客服耳麦、对话气泡、蓝色科技、机器人
+
+---
+
 > 从零开始构建企业级智能客服系统的完整指南。
 
 ## 前言

@@ -1,5 +1,12 @@
 # 提示词工程完全指南：从入门到精通 | 智理科技
 
+**封面图建议**：搜索 "ChatGPT" 或 "AI chat" 或使用以下免费图库
+- Unsplash: https://unsplash.com/s/photos/chatbot
+- Pexels: https://www.pexels.com/search/ai-chat/
+- 推荐关键词：聊天界面、对话框、紫色渐变、机器人
+
+---
+
 > 系统掌握提示词工程技巧，让AI输出更精准、更专业的结果。
 
 ## 前言

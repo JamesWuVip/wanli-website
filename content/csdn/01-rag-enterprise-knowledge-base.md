@@ -1,5 +1,12 @@
 # RAG技术在企业知识库中的应用实践 | 智理科技
 
+**封面图建议**：搜索 "AI knowledge base" 或 "vector database" 或使用以下免费图库
+- Unsplash: https://unsplash.com/s/photos/artificial-intelligence
+- Pexels: https://www.pexels.com/search/technology/
+- 推荐关键词：AI、数据库、知识图谱、蓝色科技感
+
+---
+
 > 本文详细介绍如何使用RAG（检索增强生成）技术构建企业级知识库系统，包含完整的技术方案和代码实现。
 
 ## 前言
