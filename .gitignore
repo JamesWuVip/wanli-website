@@ -47,3 +47,4 @@ urls-sogou.txt
 
 # Temporary image files
 img/
+.env*.local
