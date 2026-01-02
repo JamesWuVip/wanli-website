@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小程序开发外包避坑指南：需求、报价、验收全流程 - 智理科技技术博客</title>
+    <meta name="description" content="作为甲方如何选择靠谱的小程序开发外包公司？本文从需求梳理、技术选型、报价评估、合同签订到验收交付，分享小程序外包项目的完整避坑经验">
+    <meta name="keywords" content="小程序开发外包,微信小程序开发,小程序外包公司,小程序开发报价,北京小程序开发">
+    <meta name="author" content="智理科技技术团队">
+    <link rel="canonical" href="https://zhili.wanli.ai/blog/posts/miniprogram-development-outsourcing-guide.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="小程序开发外包避坑指南：需求、报价、验收全流程">
+    <meta property="og:description" content="作为甲方如何选择靠谱的小程序开发外包公司？分享小程序外包项目的完整避坑经验">
+    <meta property="og:image" content="https://zhili.wanli.ai/og-image.jpg">
+    <meta property="og:url" content="https://zhili.wanli.ai/blog/posts/miniprogram-development-outsourcing-guide.html">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-01-02T20:00:00+08:00">
+    <meta property="article:author" content="智理科技技术团队">
+    <meta property="article:section" content="行业洞察">
+    <meta property="article:tag" content="小程序开发">
+    <meta property="article:tag" content="外包避坑">
+
+    <!-- BreadcrumbList 结构化数据 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://zhili.wanli.ai"},
+        {"@type": "ListItem", "position": 2, "name": "技术博客", "item": "https://zhili.wanli.ai/blog/"},
+        {"@type": "ListItem", "position": 3, "name": "小程序开发外包避坑指南"}
+      ]
+    }
+    </script>
+
+    <!-- Article 结构化数据 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "小程序开发外包避坑指南：需求、报价、验收全流程",
+      "description": "作为甲方如何选择靠谱的小程序开发外包公司？本文从需求梳理、技术选型、报价评估、合同签订到验收交付，分享小程序外包项目的完整避坑经验",
+      "image": "https://zhili.wanli.ai/og-image.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "智理科技技术团队",
+        "url": "https://zhili.wanli.ai"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "北京智理科技有限公司",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://zhili.wanli.ai/logo.png"
+        }
+      },
+      "datePublished": "2026-01-02",
+      "dateModified": "2026-01-02",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://zhili.wanli.ai/blog/posts/miniprogram-development-outsourcing-guide.html"
+      },
+      "keywords": "小程序开发外包,微信小程序开发,小程序外包公司"
+    }
+    </script>
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="/css/tailwind.min.css">
+
+    <!-- 百度统计 -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?899d2895125d00f40d4e27a4e9490d14";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HYYQPK3KW2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HYYQPK3KW2');
+    </script>
+
+    <style>
+        .prose { max-width: 65ch; }
+        .prose h2 { margin-top: 2em; margin-bottom: 1em; font-size: 1.5em; font-weight: 700; }
+        .prose h3 { margin-top: 1.6em; margin-bottom: 0.6em; font-size: 1.25em; font-weight: 600; }
+        .prose p { margin-bottom: 1.25em; line-height: 1.8; }
+        .prose ul, .prose ol { margin-bottom: 1.25em; padding-left: 1.5em; }
+        .prose li { margin-bottom: 0.5em; line-height: 1.7; }
+        .prose table { width: 100%; border-collapse: collapse; margin: 1.5em 0; }
+        .prose th, .prose td { border: 1px solid #e5e7eb; padding: 0.75em; text-align: left; }
+        .prose th { background: #f9fafb; font-weight: 600; }
+        .contact-card { background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); border-radius: 1rem; padding: 2rem; }
+        .highlight-box { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 0.5rem; padding: 1.5rem; margin: 1.5em 0; }
+        .warning-box { background: #fef3c7; border: 1px solid #fcd34d; border-radius: 0.5rem; padding: 1.5rem; margin: 1.5em 0; }
+        .success-box { background: #d1fae5; border: 1px solid #6ee7b7; border-radius: 0.5rem; padding: 1.5rem; margin: 1.5em 0; }
+        .danger-box { background: #fee2e2; border: 1px solid #fca5a5; border-radius: 0.5rem; padding: 1.5rem; margin: 1.5em 0; }
+        .price-card { background: white; border: 2px solid #e5e7eb; border-radius: 0.75rem; padding: 1.5rem; }
+        .price-card:hover { border-color: #3b82f6; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- 导航 -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="/" class="text-xl font-bold text-gray-900">智理科技</a>
+                <div class="flex items-center space-x-6">
+                    <a href="/" class="text-gray-600 hover:text-blue-600">首页</a>
+                    <a href="/blog/" class="text-blue-600 font-medium">技术博客</a>
+                    <a href="mailto:wuning@wanli.ai" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">联系我们</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 文章内容 -->
+    <main class="max-w-4xl mx-auto px-4 py-12">
+        <!-- 面包屑导航 -->
+        <nav class="text-sm text-gray-500 mb-8">
+            <a href="/" class="hover:text-blue-600">首页</a>
+            <span class="mx-2">/</span>
+            <a href="/blog/" class="hover:text-blue-600">技术博客</a>
+            <span class="mx-2">/</span>
+            <span class="text-gray-900">小程序开发外包避坑指南</span>
+        </nav>
+
+        <article class="bg-white rounded-2xl shadow-sm p-8 md:p-12">
+            <!-- 文章头部 -->
+            <header class="mb-12">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="px-3 py-1 text-sm font-medium rounded-full bg-green-100 text-green-800">小程序开发</span>
+                    <span class="px-3 py-1 text-sm font-medium rounded-full bg-orange-100 text-orange-800">避坑指南</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+                    小程序开发外包避坑指南：需求、报价、验收全流程
+                </h1>
+                <p class="text-xl text-gray-600 mb-6">
+                    作为甲方如何选择靠谱的小程序开发外包公司？从需求到交付的完整经验分享
+                </p>
+                <div class="flex items-center text-sm text-gray-500 space-x-4">
+                    <span>📅 2026年1月2日</span>
+                    <span>👤 智理科技技术团队</span>
+                    <span>⏱️ 阅读约15分钟</span>
+                </div>
+            </header>
+
+            <!-- 文章正文 -->
+            <div class="prose prose-lg max-w-none text-gray-700">
+
+<div class="highlight-box">
+<strong>📊 市场现状</strong>：2026年微信小程序日活用户超过5亿，小程序已成为企业数字化的标配。但<strong>小程序开发外包</strong>市场鱼龙混杂，选择不当可能导致项目烂尾、预算超支。本文帮助您避开常见陷阱。
+</div>
+
+<h2>一、小程序开发外包前的准备工作</h2>
+
+<h3>1.1 明确业务目标</h3>
+
+<p>在寻找<strong>小程序开发外包公司</strong>之前，首先要明确：</p>
+
+<ul>
+<li><strong>核心目标</strong>：获客引流？会员管理？在线交易？品牌展示？</li>
+<li><strong>目标用户</strong>：C端消费者？B端企业？内部员工？</li>
+<li><strong>使用场景</strong>：线下扫码？社交分享？搜索发现？</li>
+<li><strong>预期效果</strong>：日活用户？转化率？GMV？</li>
+</ul>
+
+<h3>1.2 需求文档准备</h3>
+
+<div class="success-box">
+<strong>✅ 需求文档清单</strong>
+
+<ul>
+<li><strong>功能列表</strong>：列出所有需要的功能点</li>
+<li><strong>用户角色</strong>：不同角色的权限和功能</li>
+<li><strong>业务流程图</strong>：核心业务的流程说明</li>
+<li><strong>原型图</strong>：如有设计稿更好（可用墨刀、Figma）</li>
+<li><strong>参考案例</strong>：类似的小程序案例</li>
+</ul>
+</div>
+
+<p><strong>提示</strong>：需求越清晰，报价越准确，后期变更越少。</p>
+
+<h2>二、小程序类型与技术选型</h2>
+
+<h3>2.1 小程序平台选择</h3>
+
+<table>
+<thead>
+<tr><th>平台</th><th>用户规模</th><th>适合场景</th><th>开发成本</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>微信小程序</strong></td><td>5亿+日活</td><td>通用场景、社交传播</td><td>中等</td></tr>
+<tr><td><strong>支付宝小程序</strong></td><td>3亿+日活</td><td>生活服务、金融场景</td><td>中等</td></tr>
+<tr><td><strong>抖音小程序</strong></td><td>2亿+日活</td><td>电商、内容变现</td><td>中等</td></tr>
+<tr><td><strong>百度小程序</strong></td><td>5000万+日活</td><td>搜索场景、工具类</td><td>较低</td></tr>
+<tr><td><strong>多端小程序</strong></td><td>覆盖全平台</td><td>需要多平台覆盖</td><td>较高</td></tr>
+</tbody>
+</table>
+
+<h3>2.2 技术框架选择</h3>
+
+<table>
+<thead>
+<tr><th>框架</th><th>特点</th><th>适合场景</th><th>学习成本</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>原生开发</strong></td><td>性能最好、平台特性支持完整</td><td>单平台、高性能要求</td><td>中等</td></tr>
+<tr><td><strong>Uni-app</strong></td><td>一套代码多端运行、生态丰富</td><td>多端发布、快速开发</td><td>较低</td></tr>
+<tr><td><strong>Taro</strong></td><td>React语法、京东出品</td><td>React团队、多端发布</td><td>中等</td></tr>
+<tr><td><strong>mpvue/wepy</strong></td><td>Vue语法、社区活跃度下降</td><td>老项目维护</td><td>较低</td></tr>
+</tbody>
+</table>
+
+<div class="highlight-box">
+<strong>💡 选型建议</strong>
+
+<ul>
+<li><strong>只做微信小程序</strong>：原生开发，性能最优</li>
+<li><strong>需要多端发布</strong>：Uni-app，一套代码多端运行</li>
+<li><strong>团队熟悉React</strong>：Taro，开发体验好</li>
+</ul>
+</div>
+
+<h2>三、小程序开发报价解析</h2>
+
+<h3>3.1 影响报价的因素</h3>
+
+<table>
+<thead>
+<tr><th>因素</th><th>影响程度</th><th>说明</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>功能复杂度</strong></td><td>⭐⭐⭐⭐⭐</td><td>功能越多、逻辑越复杂，价格越高</td></tr>
+<tr><td><strong>UI设计要求</strong></td><td>⭐⭐⭐⭐</td><td>定制设计比模板贵</td></tr>
+<tr><td><strong>后端复杂度</strong></td><td>⭐⭐⭐⭐</td><td>是否需要复杂的后台管理系统</td></tr>
+<tr><td><strong>第三方集成</strong></td><td>⭐⭐⭐</td><td>支付、地图、物流等接口</td></tr>
+<tr><td><strong>多端适配</strong></td><td>⭐⭐⭐</td><td>是否需要多个平台</td></tr>
+<tr><td><strong>开发周期</strong></td><td>⭐⭐</td><td>加急项目会增加成本</td></tr>
+</tbody>
+</table>
+
+<h3>3.2 常见小程序类型报价参考</h3>
+
+<div class="price-card mb-4">
+<h4 class="font-bold text-gray-900 mb-2">📱 展示型小程序</h4>
+<p class="text-2xl font-bold text-blue-600 mb-2">5,000 - 15,000 元</p>
+<ul class="text-sm text-gray-600">
+<li>企业介绍、产品展示</li>
+<li>联系方式、地图导航</li>
+<li>简单的表单提交</li>
+<li>周期：1-2周</li>
+</ul>
+</div>
+
+<div class="price-card mb-4">
+<h4 class="font-bold text-gray-900 mb-2">🛒 电商型小程序</h4>
+<p class="text-2xl font-bold text-blue-600 mb-2">20,000 - 80,000 元</p>
+<ul class="text-sm text-gray-600">
+<li>商品管理、购物车、订单系统</li>
+<li>支付集成（微信支付）</li>
+<li>会员系统、优惠券</li>
+<li>后台管理系统</li>
+<li>周期：4-8周</li>
+</ul>
+</div>
+
+<div class="price-card mb-4">
+<h4 class="font-bold text-gray-900 mb-2">🎯 O2O服务型小程序</h4>
+<p class="text-2xl font-bold text-blue-600 mb-2">30,000 - 100,000 元</p>
+<ul class="text-sm text-gray-600">
+<li>预约系统、排队叫号</li>
+<li>LBS定位、地图服务</li>
+<li>多门店管理</li>
+<li>评价系统、消息推送</li>
+<li>周期：6-12周</li>
+</ul>
+</div>
+
+<div class="price-card mb-4">
+<h4 class="font-bold text-gray-900 mb-2">🤖 AI智能小程序</h4>
+<p class="text-2xl font-bold text-blue-600 mb-2">50,000 - 200,000 元</p>
+<ul class="text-sm text-gray-600">
+<li>AI对话、智能客服</li>
+<li>图像识别、OCR</li>
+<li>个性化推荐</li>
+<li>数据分析看板</li>
+<li>周期：8-16周</li>
+</ul>
+</div>
+
+<div class="warning-box">
+<strong>⚠️ 报价陷阱警示</strong>
+
+<ul>
+<li><strong>过低报价</strong>：低于市场价50%以上，可能是模板套用或后期加价</li>
+<li><strong>模糊报价</strong>：不提供详细报价清单，后期容易产生纠纷</li>
+<li><strong>隐藏费用</strong>：服务器、域名、SSL、维护费等未包含</li>
+</ul>
+</div>
+
+<h2>四、如何选择小程序开发公司</h2>
+
+<h3>4.1 评估维度</h3>
+
+<table>
+<thead>
+<tr><th>维度</th><th>评估要点</th><th>权重</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>技术能力</strong></td><td>技术栈、案例质量、代码规范</td><td>30%</td></tr>
+<tr><td><strong>项目经验</strong></td><td>同类型项目数量、行业经验</td><td>25%</td></tr>
+<tr><td><strong>服务能力</strong></td><td>沟通效率、响应速度、售后服务</td><td>20%</td></tr>
+<tr><td><strong>价格合理性</strong></td><td>报价透明、性价比</td><td>15%</td></tr>
+<tr><td><strong>公司稳定性</strong></td><td>成立时间、团队规模、口碑</td><td>10%</td></tr>
+</tbody>
+</table>
+
+<h3>4.2 必问问题清单</h3>
+
+<div class="highlight-box">
+<strong>📋 与开发公司沟通时必问的10个问题</strong>
+
+<ol>
+<li>你们有多少个小程序开发案例？能否演示？</li>
+<li>开发团队有多少人？是自有团队还是外包？</li>
+<li>使用什么技术框架？为什么选择这个框架？</li>
+<li>项目的开发周期是多久？有哪些里程碑？</li>
+<li>报价包含哪些内容？有哪些额外费用？</li>
+<li>源代码是否完整交付？知识产权如何归属？</li>
+<li>上线后的维护服务如何？响应时间多久？</li>
+<li>如果需求变更如何处理？费用如何计算？</li>
+<li>服务器、域名等基础设施如何解决？</li>
+<li>能否提供现有客户的联系方式作为背书？</li>
+</ol>
+</div>
+
+<h3>4.3 警惕信号</h3>
+
+<div class="danger-box">
+<strong>🚫 遇到以下情况要警惕</strong>
+
+<ul>
+<li>报价远低于市场价，承诺"包满意"</li>
+<li>无法提供可演示的案例</li>
+<li>拒绝提供详细报价清单</li>
+<li>合同条款模糊，不明确交付标准</li>
+<li>要求一次性付清全款</li>
+<li>无固定办公地点或联系方式</li>
+</ul>
+</div>
+
+<h2>五、合同签订要点</h2>
+
+<h3>5.1 必须明确的条款</h3>
+
+<table>
+<thead>
+<tr><th>条款</th><th>建议内容</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>项目范围</strong></td><td>详细的功能清单和技术规格</td></tr>
+<tr><td><strong>交付标准</strong></td><td>可量化的验收标准</td></tr>
+<tr><td><strong>时间节点</strong></td><td>明确的里程碑和延期罚则</td></tr>
+<tr><td><strong>付款方式</strong></td><td>建议：30%预付+40%中期+30%验收</td></tr>
+<tr><td><strong>知识产权</strong></td><td>源代码、设计稿的归属</td></tr>
+<tr><td><strong>保密条款</strong></td><td>数据安全和商业秘密保护</td></tr>
+<tr><td><strong>维护服务</strong></td><td>免费维护期、响应时间</td></tr>
+<tr><td><strong>违约责任</strong></td><td>双方违约的处理方式</td></tr>
+</tbody>
+</table>
+
+<h3>5.2 付款节点建议</h3>
+
+<div class="success-box">
+<strong>💰 推荐付款方式</strong>
+
+<ul>
+<li><strong>预付款 30%</strong>：合同签订后支付</li>
+<li><strong>中期款 40%</strong>：UI设计确认 + 核心功能开发完成</li>
+<li><strong>尾款 30%</strong>：项目验收通过、上线后支付</li>
+</ul>
+
+<p><strong>注意</strong>：尾款比例不宜过低，否则乙方缺乏动力完成收尾工作。</p>
+</div>
+
+<h2>六、项目验收清单</h2>
+
+<h3>6.1 功能验收</h3>
+
+<ul>
+<li>[ ] 所有功能点按需求文档实现</li>
+<li>[ ] 各功能流程正常运行</li>
+<li>[ ] 异常情况有合理的错误提示</li>
+<li>[ ] 边界条件测试通过</li>
+</ul>
+
+<h3>6.2 性能验收</h3>
+
+<ul>
+<li>[ ] 页面加载时间 < 2秒</li>
+<li>[ ] 接口响应时间 < 500ms</li>
+<li>[ ] 并发用户支持达到预期</li>
+<li>[ ] 无明显卡顿和闪退</li>
+</ul>
+
+<h3>6.3 兼容性验收</h3>
+
+<ul>
+<li>[ ] iOS/Android 双平台正常</li>
+<li>[ ] 不同屏幕尺寸适配正常</li>
+<li>[ ] 微信版本兼容性测试</li>
+</ul>
+
+<h3>6.4 交付物验收</h3>
+
+<ul>
+<li>[ ] 源代码完整交付</li>
+<li>[ ] 技术文档（接口文档、部署文档）</li>
+<li>[ ] 后台管理系统账号</li>
+<li>[ ] 服务器/数据库访问权限</li>
+<li>[ ] 小程序后台管理权限</li>
+</ul>
+
+<h2>七、智理科技小程序开发服务</h2>
+
+<div class="highlight-box">
+<strong>🏆 为什么选择智理科技？</strong>
+
+<p><strong>团队背景</strong></p>
+<ul>
+<li>核心团队来自国内头部教育科技公司产研高管</li>
+<li>5年+小程序开发经验，交付50+小程序项目</li>
+<li>精通微信、支付宝、抖音等多平台开发</li>
+</ul>
+
+<p><strong>服务承诺</strong></p>
+<ul>
+<li>100%按期交付，延期全额退款</li>
+<li>源代码完整交付，知识产权归甲方</li>
+<li>免费3个月维护期，7×24小时响应</li>
+<li>提供详细技术文档和培训</li>
+</ul>
+
+<p><strong>技术优势</strong></p>
+<ul>
+<li>支持AI智能功能集成（智能客服、图像识别）</li>
+<li>云开发/传统开发灵活选择</li>
+<li>完善的后台管理系统</li>
+</ul>
+</div>
+
+<h3>7.1 服务流程</h3>
+
+<ol>
+<li><strong>需求沟通</strong>（1-3天）：了解业务需求，提供初步方案</li>
+<li><strong>方案报价</strong>（2-3天）：详细功能清单和报价</li>
+<li><strong>合同签订</strong>：明确双方权责</li>
+<li><strong>UI设计</strong>（1-2周）：设计稿确认</li>
+<li><strong>开发实施</strong>（2-8周）：按里程碑交付</li>
+<li><strong>测试验收</strong>（1周）：功能测试、性能测试</li>
+<li><strong>上线部署</strong>：协助提交审核、上线</li>
+<li><strong>售后维护</strong>：3个月免费维护</li>
+</ol>
+
+<h2>八、总结</h2>
+
+<p>选择<strong>小程序开发外包</strong>公司，关键在于：</p>
+
+<ol>
+<li><strong>需求先行</strong>：需求越清晰，项目越顺利</li>
+<li><strong>多方比较</strong>：至少对比3家以上</li>
+<li><strong>案例验证</strong>：要求演示真实案例</li>
+<li><strong>合同保障</strong>：明确所有关键条款</li>
+<li><strong>分期付款</strong>：控制资金风险</li>
+<li><strong>过程管控</strong>：定期检查项目进度</li>
+</ol>
+
+<div class="highlight-box">
+<strong>📞 免费咨询</strong>
+
+如果您正在寻找靠谱的<strong>小程序开发外包公司</strong>，欢迎联系智理科技进行免费咨询。
+
+<ul>
+<li>📧 邮箱: <a href="mailto:wuning@wanli.ai">wuning@wanli.ai</a></li>
+<li>🌐 官网: <a href="https://zhili.wanli.ai">https://zhili.wanli.ai</a></li>
+</ul>
+</div>
+
+<!-- 相关推荐 -->
+<div class="mt-16 border-t border-gray-200 pt-12">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+        <span class="w-1 h-6 bg-blue-600 mr-3"></span>
+        相关推荐
+    </h2>
+    <div class="grid md:grid-cols-2 gap-6">
+        <a href="beijing-ai-development-company-guide.html" class="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
+            <span class="inline-block px-2 py-1 text-xs font-medium rounded bg-orange-100 text-orange-800 mb-2">行业洞察</span>
+            <h4 class="font-semibold text-gray-900 mb-2">北京AI开发公司选择指南：避坑经验分享</h4>
+            <p class="text-sm text-gray-600">作为甲方如何选择靠谱的AI开发公司？</p>
+        </a>
+        <a href="enterprise-ai-transformation-guide-2026.html" class="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
+            <span class="inline-block px-2 py-1 text-xs font-medium rounded bg-purple-100 text-purple-800 mb-2">AI咨询</span>
+            <h4 class="font-semibold text-gray-900 mb-2">2026年企业AI转型指南</h4>
+            <p class="text-sm text-gray-600">全面解析企业AI转型的战略规划与落地实施</p>
+        </a>
+    </div>
+</div>
+
+            </div>
+        </article>
+
+        <!-- 联系卡片 -->
+        <div class="contact-card mt-12">
+            <h3 class="text-xl font-bold text-white mb-3">💡 需要小程序开发服务？</h3>
+            <p class="text-white/90 mb-4">智理科技提供专业的小程序开发外包服务，100%按期交付，源代码完整交付。</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="mailto:wuning@wanli.ai" class="inline-flex items-center text-white hover:text-white/90">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    wuning@wanli.ai
+                </a>
+                <a href="https://zhili.wanli.ai" class="inline-flex items-center text-white hover:text-white/90">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                    </svg>
+                    zhili.wanli.ai
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 text-gray-400 py-12 mt-16">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <p class="mb-4">© 2024-2026 北京智理科技有限公司 版权所有</p>
+            <div class="flex justify-center space-x-6">
+                <a href="/" class="hover:text-white">首页</a>
+                <a href="/blog/" class="hover:text-white">技术博客</a>
+                <a href="mailto:wuning@wanli.ai" class="hover:text-white">联系我们</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
