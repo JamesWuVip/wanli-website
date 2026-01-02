@@ -1,6 +1,82 @@
 [
   {
-    "id": 1766899857201.8735,
+    "id": 1767329646578.1187,
+    "title": "企业AI实践案例：智能客服系统如何降低80%人工成本",
+    "slug": "ai-customer-service-case-study",
+    "excerpt": "真实案例分享：某电商企业如何通过GPT-4驱动的智能客服系统，实现7x24小时服务、80%成本降低、95%用户满意度的完整实践过程",
+    "category": "ai",
+    "categoryName": "AI应用开发",
+    "tags": [
+      "AI客服",
+      "GPT-4",
+      "企业案例",
+      "成本优化",
+      "客户服务"
+    ],
+    "author": "智理科技技术团队",
+    "date": "2026-01-02",
+    "readTime": "15分钟",
+    "cover": "https://via.placeholder.com/400x250/667eea/ffffff?text=AI%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91"
+  },
+  {
+    "id": 1767329646579.238,
+    "title": "企业AI实践案例：智能文档处理系统如何节省90%人工审核时间",
+    "slug": "ai-document-processing-case-study",
+    "excerpt": "真实案例分享：某金融机构如何通过AI文档处理系统，实现合同自动审核、发票智能识别、报告自动生成，节省90%人工时间的完整实践",
+    "category": "ai",
+    "categoryName": "AI应用开发",
+    "tags": [
+      "文档处理",
+      "OCR",
+      "企业案例",
+      "自动化",
+      "金融科技"
+    ],
+    "author": "智理科技技术团队",
+    "date": "2026-01-02",
+    "readTime": "13分钟",
+    "cover": "https://via.placeholder.com/400x250/667eea/ffffff?text=AI%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91"
+  },
+  {
+    "id": 1767329646581.018,
+    "title": "企业AI实践案例：AI销售助手如何提升50%转化率",
+    "slug": "ai-sales-assistant-case-study",
+    "excerpt": "真实案例分享：某B2B企业如何通过AI销售助手实现线索自动跟进、智能话术推荐、销售预测，最终提升50%转化率的完整实践",
+    "category": "ai",
+    "categoryName": "AI应用开发",
+    "tags": [
+      "AI销售",
+      "销售助手",
+      "企业案例",
+      "转化率优化",
+      "B2B"
+    ],
+    "author": "智理科技技术团队",
+    "date": "2026-01-02",
+    "readTime": "14分钟",
+    "cover": "https://via.placeholder.com/400x250/667eea/ffffff?text=AI%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91"
+  },
+  {
+    "id": 1767329646588.3486,
+    "title": "企业AI实践案例：AI供应链预测如何降低30%库存成本",
+    "slug": "ai-supply-chain-case-study",
+    "excerpt": "真实案例分享：某零售企业如何通过AI需求预测和智能补货系统，实现库存周转率提升40%、缺货率降低60%、库存成本降低30%的完整实践",
+    "category": "ai",
+    "categoryName": "AI应用开发",
+    "tags": [
+      "供应链",
+      "需求预测",
+      "企业案例",
+      "库存优化",
+      "零售"
+    ],
+    "author": "智理科技技术团队",
+    "date": "2026-01-02",
+    "readTime": "14分钟",
+    "cover": "https://via.placeholder.com/400x250/667eea/ffffff?text=AI%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91"
+  },
+  {
+    "id": 1767329646575.1975,
     "title": "AI应用成本优化完全指南：从每月$5000降至$800的实战经验",
     "slug": "ai-cost-optimization-guide",
     "excerpt": "分享真实项目中将AI应用成本从每月$5000降至$800的完整优化策略，涵盖模型选型、Prompt优化、缓存策略、本地化部署等多个维度",
@@ -19,7 +95,7 @@
     "cover": "https://via.placeholder.com/400x250/667eea/ffffff?text=AI%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91"
   },
   {
-    "id": 1766899857205.1702,
+    "id": 1767329646593.0322,
     "title": "提示词工程完全指南：从入门到精通",
     "slug": "prompt-engineering-complete-guide",
     "excerpt": "系统讲解提示词工程的核心原理、设计模式和最佳实践，涵盖Zero-Shot、Few-Shot、Chain-of-Thought等技术，附大量真实案例和可复用模板",
@@ -38,7 +114,7 @@
     "cover": "https://via.placeholder.com/400x250/667eea/ffffff?text=AI%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91"
   },
   {
-    "id": 1766899857203.7927,
+    "id": 1767329646591.064,
     "title": "企业级微服务架构设计与落地实践",
     "slug": "enterprise-microservices-architecture",
     "excerpt": "从单体应用到微服务的完整演进路径，涵盖服务拆分策略、API网关设计、分布式事务处理、服务治理等核心技术，并分享真实项目中的踩坑经验",
@@ -57,7 +133,7 @@
     "cover": "https://via.placeholder.com/400x250/667eea/ffffff?text=%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1"
   },
   {
-    "id": 1766899857211.7087,
+    "id": 1767329646597.665,
     "title": "RAG技术在企业知识库中的应用实践",
     "slug": "rag-enterprise-knowledge-base",
     "excerpt": "深入解析RAG（检索增强生成）技术如何解决企业知识库应用痛点，包含完整的技术架构、向量数据库选型、检索策略优化及真实案例分享",
