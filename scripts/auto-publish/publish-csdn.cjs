@@ -65,15 +65,34 @@ async function publishArticle(page, article) {
         await page.goto('https://editor.csdn.net/md/', { waitUntil: 'networkidle' });
         await page.waitForTimeout(3000);
         
+        // 关闭可能存在的模态框
+        try {
+            const closeBtn = await page.locator('.modal-close, .close-btn, button:has-text("关闭"), button:has-text("×"), .modal button').first();
+            if (await closeBtn.isVisible({ timeout: 2000 })) {
+                await closeBtn.click();
+                await page.waitForTimeout(1000);
+                console.log('✅ 关闭模态框');
+            }
+        } catch (e) {
+            // 没有模态框，继续
+        }
+        
+        // 按 Escape 关闭任何弹窗
+        await page.keyboard.press('Escape');
+        await page.waitForTimeout(500);
+        
+        // 截图便于调试
+        await page.screenshot({ path: 'scripts/auto-publish/debug-editor.png' });
+        
         // 清空并输入标题
-        const titleInput = await page.locator('input.article-bar__title, input[placeholder*="标题"]').first();
+        const titleInput = await page.locator('input.article-bar__title, input[placeholder*="标题"], .title-input input').first();
         await titleInput.click();
         await titleInput.fill('');
         await titleInput.fill(article.title);
         console.log('✅ 标题已输入');
         
         // 输入正文（Markdown编辑器）
-        const editor = await page.locator('.editor__inner, .CodeMirror-code, textarea.content').first();
+        const editor = await page.locator('.editor__inner, .CodeMirror-code, textarea.content, .cledit-section').first();
         await editor.click();
         
         // 使用键盘快捷键全选并删除
@@ -87,36 +106,49 @@ async function publishArticle(page, article) {
         
         // 点击发布按钮
         await page.waitForTimeout(2000);
-        const publishBtn = await page.locator('button:has-text("发布文章"), button:has-text("发布")').first();
+        await page.screenshot({ path: 'scripts/auto-publish/debug-before-publish.png' });
+        
+        const publishBtn = await page.locator('button:has-text("发布文章")').first();
         await publishBtn.click();
         console.log('✅ 点击发布按钮');
         
         // 等待发布设置弹窗
-        await page.waitForTimeout(2000);
+        await page.waitForTimeout(3000);
+        await page.screenshot({ path: 'scripts/auto-publish/debug-publish-modal.png' });
         
-        // 添加标签
+        // 添加标签（如果有输入框）
         if (article.tags.length > 0) {
-            const tagInput = await page.locator('input[placeholder*="标签"], input[placeholder*="添加"]').first();
-            if (await tagInput.isVisible()) {
-                for (const tag of article.tags.slice(0, 5)) { // CSDN 最多5个标签
-                    await tagInput.fill(tag);
-                    await page.keyboard.press('Enter');
-                    await page.waitForTimeout(300);
+            try {
+                const tagInput = await page.locator('input[placeholder*="标签"], input[placeholder*="添加"], .tag-input input').first();
+                if (await tagInput.isVisible({ timeout: 2000 })) {
+                    for (const tag of article.tags.slice(0, 3)) {
+                        await tagInput.fill(tag);
+                        await page.keyboard.press('Enter');
+                        await page.waitForTimeout(500);
+                    }
+                    console.log('✅ 标签已添加');
                 }
-                console.log('✅ 标签已添加');
+            } catch (e) {
+                console.log('⚠️ 标签输入跳过');
             }
         }
         
-        // 确认发布
-        const confirmBtn = await page.locator('button:has-text("确定并发布"), button:has-text("发布")').last();
+        // 确认发布 - 点击弹窗中的"发布文章"按钮
+        await page.waitForTimeout(1000);
+        
+        // 根据截图，按钮文字是"发布文章"，是红色按钮
+        const confirmBtn = await page.locator('button:has-text("发布文章")').last();
         await confirmBtn.click();
+        console.log('✅ 点击确认发布');
         
         await page.waitForTimeout(5000);
-        console.log('✅ 文章发布成功!');
+        await page.screenshot({ path: 'scripts/auto-publish/debug-after-publish.png' });
+        console.log('✅ 文章发布完成!');
         
         return true;
     } catch (error) {
         console.error(`❌ 发布失败: ${error.message}`);
+        await page.screenshot({ path: `scripts/auto-publish/error-${Date.now()}.png` });
         return false;
     }
 }
