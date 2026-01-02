@@ -96,4 +96,11 @@
         <priority>0.8</priority>
     </url>
 
+    <url>
+        <loc>https://zhili.wanli.ai/blog/posts/education-ai-application-development.html</loc>
+        <lastmod>2026-01-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
 </urlset>
