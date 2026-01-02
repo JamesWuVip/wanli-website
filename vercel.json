@@ -1,6 +1,5 @@
 {
-  "buildCommand": "echo 'Using static files from public-site directory'",
-  "outputDirectory": "public-site",
+  "framework": "nextjs",
   "headers": [
     {
       "source": "/(.*)",
