@@ -4,5 +4,18 @@
   "type": "module",
   "dependencies": {
     "nodemailer": "^6.9.7"
-  }
+  },
+  "main": "translations.js",
+  "devDependencies": {
+    "tailwindcss": "^4.1.18"
+  },
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./css/tailwind.min.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./css/tailwind.min.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
