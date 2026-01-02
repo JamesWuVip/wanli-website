@@ -28,7 +28,7 @@
 - [ ] **手动提交重要页面 URL**
   - 百度：https://ziyuan.baidu.com/linksubmit/url
   - Google：Search Console → URL检查 → 请求编入索引
-- [ ] **配置 IndexNow**（加速 Bing/Yandex 收录）
+- [x] **配置 IndexNow**（加速 Bing/Yandex 收录）- 密钥文件已创建
 
 #### 2. 技术SEO检查
 - [x] Canonical URL
@@ -53,7 +53,7 @@
 | AI应用成本优化方案 | 低 | ✅ 已有文章 |
 | 提示词工程 企业应用 | 低 | ✅ 已有文章 |
 | 微服务架构 落地实践 | 中 | ✅ 已有文章 |
-| **教育AI应用开发** | 低 | ⭐ 建议新增 |
+| **教育AI应用开发** | 低 | ✅ 已新增 |
 | **北京AI定制开发服务** | 低 | ⭐ 建议新增 |
 | **企业AI转型咨询** | 中 | ⭐ 建议新增 |
 
