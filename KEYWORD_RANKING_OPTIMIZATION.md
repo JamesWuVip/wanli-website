@@ -25,9 +25,9 @@
 #### 1. 加速收录
 - [x] 提交 sitemap 到各搜索引擎
 - [x] 添加站点验证码
-- [ ] **手动提交重要页面 URL**
+- [x] **手动提交重要页面 URL**
   - 百度：https://ziyuan.baidu.com/linksubmit/url
-  - Google：Search Console → URL检查 → 请求编入索引
+  - Google：✅ Sitemap 已提交，Google 已读取（2026-01-02）
 - [x] **配置 IndexNow**（加速 Bing/Yandex 收录）- 密钥文件已创建
 
 #### 2. 技术SEO检查
@@ -35,7 +35,7 @@
 - [x] 结构化数据
 - [x] Sitemap
 - [x] Robots.txt
-- [ ] **页面加载速度优化**（Core Web Vitals）
+- [x] **页面加载速度优化**（Core Web Vitals）- Tailwind CSS 本地化完成（29KB）
 - [ ] **移动端适配检查**
 
 ---
