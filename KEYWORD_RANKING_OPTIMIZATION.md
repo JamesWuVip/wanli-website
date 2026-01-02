@@ -36,7 +36,7 @@
 - [x] Sitemap
 - [x] Robots.txt
 - [x] **页面加载速度优化**（Core Web Vitals）- Tailwind CSS 本地化完成（29KB）
-- [ ] **移动端适配检查**
+- [x] **移动端适配检查** - 响应式设计完善（viewport、Tailwind断点）
 
 ---
 
